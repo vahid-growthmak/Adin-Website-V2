@@ -2,7 +2,6 @@
 
 import { Reveal } from '../ui/Reveal'
 import { SectionLabel } from '../ui/SectionLabel'
-import { DisplayHeading } from '../ui/DisplayHeading'
 import { Button } from '../ui/Button'
 import Image from 'next/image'
 

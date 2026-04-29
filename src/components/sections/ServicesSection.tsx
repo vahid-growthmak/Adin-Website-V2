@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { services } from '@/data/services'
+import { Service } from '@/types/services'
 import { SectionLabel } from '../ui/SectionLabel'
 import { DisplayHeading } from '../ui/DisplayHeading'
 import { Reveal } from '../ui/Reveal'
@@ -74,7 +75,7 @@ export function ServicesSection() {
   )
 }
 
-function ServiceItem({ service, index }: { service: any; index: number }) {
+function ServiceItem({ service, index }: { service: Service; index: number }) {
   const isEven = index % 2 === 0
 
   return (

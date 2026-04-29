@@ -45,7 +45,7 @@ export function ClientJourney() {
         </div>
 
         <div className="space-y-0">
-          {steps.map((step, index) => (
+          {steps.map((step) => (
             <Reveal key={step.number}>
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start py-10 border-t border-adin-black/10">
                 <div className="md:col-span-2">

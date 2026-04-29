@@ -286,7 +286,7 @@ export default function FoodBeveragePage() {
   )
 }
 
-function FandBExpertiseItem({ title, description }: any) {
+function FandBExpertiseItem({ title, description }: { title: string; description: string }) {
   return (
     <div className="flex items-start gap-6 group">
       <span className="w-2 h-2 rounded-full bg-adin-green mt-2.5 flex-shrink-0 group-hover:scale-125 transition-transform" />

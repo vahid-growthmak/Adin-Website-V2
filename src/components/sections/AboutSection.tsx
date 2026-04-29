@@ -6,7 +6,6 @@ import { SectionLabel } from '../ui/SectionLabel'
 import { DisplayHeading } from '../ui/DisplayHeading'
 import { StatCounter } from '../ui/StatCounter'
 import { Button } from '../ui/Button'
-import { site } from '@/data/site'
 import { useStickyInternalScroll } from '@/hooks/useStickyInternalScroll'
 import { cn } from '@/lib/utils'
 
