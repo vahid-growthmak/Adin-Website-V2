@@ -1,0 +1,26 @@
+# Dependency directories
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Build outputs
+build/
+dist/
+
+# OS files
+.DS_Store
+
+# Env files
+.env*
+!.env.example
+
+# Large files/Archives
+*.zip
+*.tar.gz
+*.skill
+
+# Extraction artifacts
+skill_extracted/
+source_extracted/
