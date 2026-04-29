@@ -147,11 +147,9 @@ export default function ContactPage() {
                 </div>
                 
                 <div className="pt-4">
-                  <button type="submit" className="w-full">
-                    <Button as="span" className="w-full py-6 flex justify-center">
-                      Send Message →
-                    </Button>
-                  </button>
+                  <Button type="submit" className="w-full py-6 flex justify-center">
+                    Send Message →
+                  </Button>
                 </div>
               </form>
             </Reveal>

@@ -224,11 +224,9 @@ export default function CareersPage() {
                   </div>
                 </div>
 
-                <button type="submit" className="w-full mt-12">
-                  <Button as="span" className="w-full py-6 flex justify-center bg-adin-green hover:bg-adin-green/90 text-white">
-                    Submit Application →
-                  </Button>
-                </button>
+                <Button type="submit" className="w-full mt-12 py-6 flex justify-center bg-adin-green hover:bg-adin-green/90 text-white">
+                  Submit Application →
+                </Button>
               </form>
             </Reveal>
           </div>
