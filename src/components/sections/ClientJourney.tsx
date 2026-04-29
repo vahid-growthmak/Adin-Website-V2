@@ -37,7 +37,7 @@ export function ClientJourney() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <Reveal>
-            <SectionLabel className="mb-4" style={{ color: '#0F5E4E' }}>The Process</SectionLabel>
+            <SectionLabel className="mb-4 text-adin-green">The Process</SectionLabel>
             <h2 className="font-heading font-black tracking-tighter leading-none text-adin-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               The Client Journey
             </h2>
