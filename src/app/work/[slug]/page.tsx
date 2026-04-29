@@ -102,7 +102,7 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
                         {block.body}
                       </p>
                     </div>
-                  ) : block.type === 'image' ? (
+                  ) : block.type === 'image' && block.src ? (
                     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm my-16">
                       <Image src={block.src} alt={block.alt || project.title} fill className="object-cover" />
                     </div>
