@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { SectionLabel } from '../ui/SectionLabel'
 import { DisplayHeading } from '../ui/DisplayHeading'
 import { Reveal } from '../ui/Reveal'
+import { Button } from '../ui/Button'
 import Image from 'next/image'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
@@ -70,8 +71,18 @@ export function WorkSection() {
               image="/images/naturepedic.webp"
               className="md:col-span-12 h-[400px]"
               horizontal
+              // Subject of the photo (person on the bed) sits in the top
+              // third — anchor object-position there so the wide crop
+              // doesn't slice it off.
+              imagePosition="top"
             />
           </div>
+
+          <Reveal delay={0.3} className="mt-20 flex justify-center">
+            <Button href="/work" variant="outline">
+              View Case Studies
+            </Button>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -85,6 +96,7 @@ function WorkCard({
   image,
   className,
   horizontal = false,
+  imagePosition = 'center',
 }: {
   href: string
   title: string
@@ -92,7 +104,16 @@ function WorkCard({
   image: string
   className?: string
   horizontal?: boolean
+  imagePosition?: 'center' | 'top' | 'bottom' | 'left' | 'right'
 }) {
+  const positionClass = {
+    center: 'object-center',
+    top: 'object-top',
+    bottom: 'object-bottom',
+    left: 'object-left',
+    right: 'object-right',
+  }[imagePosition]
+
   return (
     <Reveal className={cn('relative group overflow-hidden', className)}>
       <Link href={href} className="block relative w-full h-full cursor-none">
@@ -101,7 +122,10 @@ function WorkCard({
           alt={title}
           fill
           sizes={horizontal ? '100vw' : '(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 600px'}
-          className="object-cover transition-transform duration-1000 group-hover:scale-105"
+          className={cn(
+            'object-cover transition-transform duration-1000 group-hover:scale-105',
+            positionClass,
+          )}
         />
         <div className={cn(
           "absolute inset-0 bg-gradient-to-t from-adin-black/90 via-adin-black/20 to-transparent p-8 md:p-12 flex flex-col justify-end transition-opacity duration-500",
