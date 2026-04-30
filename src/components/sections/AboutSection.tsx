@@ -6,6 +6,7 @@ import { SectionLabel } from '../ui/SectionLabel'
 import { DisplayHeading } from '../ui/DisplayHeading'
 import { StatCounter } from '../ui/StatCounter'
 import { Button } from '../ui/Button'
+import { Marquee } from '../ui/Marquee'
 import { useStickyInternalScroll } from '@/hooks/useStickyInternalScroll'
 import { cn } from '@/lib/utils'
 
@@ -21,6 +22,9 @@ export function AboutSection() {
       ref={sectionRef}
       className="relative bg-adin-black overflow-hidden"
     >
+      {/* Marquee sits at the top edge of About so it reads as the divider
+          between Hero and the rest of the page. */}
+      <Marquee />
       <div ref={innerRef} className="py-24 md:py-40 px-6 md:px-12 lg:px-16 border-t border-white/5">
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">

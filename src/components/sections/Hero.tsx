@@ -5,7 +5,6 @@ import gsap from 'gsap'
 import { useRef } from 'react'
 import Image from 'next/image'
 import { Button } from '../ui/Button'
-import { Marquee } from '../ui/Marquee'
 import { site } from '@/data/site'
 
 export function Hero() {
@@ -81,19 +80,15 @@ export function Hero() {
               </p>
               <div className="hero-reveal flex flex-wrap gap-4">
                 <Button href="/work" variant="primary">
-                  Explore Work
+                  View Case Studies
                 </Button>
                 <Button href="/contact" variant="outline">
-                  Get In Touch
+                  Contact Us
                 </Button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="relative z-20">
-        <Marquee />
       </div>
     </section>
   )
