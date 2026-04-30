@@ -23,7 +23,7 @@ export default async function JobDetailPage({ params }: { params: Promise<{ id: 
         <div className="max-w-screen-2xl mx-auto">
           <Reveal>
             <Link href="/careers" className="inline-flex items-center gap-2 text-white uppercase tracking-widest hover:text-adin-green transition-colors text-[10px] font-bold mb-12">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M7 2L2 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M7 2L2 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               Back to Careers
             </Link>
             <div className="flex items-center gap-6 mb-8">

@@ -3,7 +3,7 @@ import type { Testimonial } from '@/types/testimonials'
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'During the onset of COVID-19, ADIN coordinated with experts and local media outlets across multiple locations to execute a PR campaign that generated nearly 50 million impressions across television, radio, print and online.',
+      'During COVID, ADin helped us pull together experts and media across multiple regions and run a campaign that reached nearly 50 million impressions. It made a real difference for our brand.',
     author: 'Neal Mercado',
     role: 'Chief Marketing Officer, Designs for Health',
     client: 'Designs for Health',
@@ -11,7 +11,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'ADIN has a unique ability to identify opportunities and trends. For purpose-driven entrepreneurs like myself, that insight is invaluable.',
+      'ADin really understands how to spot the right opportunities at the right time. As a purpose-driven founder, that kind of insight has been incredibly valuable for us.',
     author: 'Kari Warberg Block',
     role: 'CEO & Founder, EarthKind',
     client: 'EarthKind',
@@ -19,7 +19,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "ADIN leveraged our company's pivot into producing facemasks to generate millions of consumer impressions, driving both brand awareness and sales.",
+      'When we shifted our focus, ADin helped us get the word out in a big way. The campaign reached millions and had a real impact on our visibility and sales.',
     author: 'Barry Cik',
     role: 'Founder, Naturepedic',
     client: 'Naturepedic',

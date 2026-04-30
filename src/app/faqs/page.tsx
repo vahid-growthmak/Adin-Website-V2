@@ -6,7 +6,6 @@ import { DisplayHeading } from '@/components/ui/DisplayHeading'
 import { Button } from '@/components/ui/Button'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Link from 'next/link'
 
 const faqData = [
   {
@@ -128,7 +127,7 @@ function FAQAccordion({ q, a }: { q: string; a: string }) {
 
 export default function FAQsPage() {
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HEADER */}
       <section className="px-6 md:px-12 lg:px-16 pt-40 pb-20 md:pt-48 md:pb-24">
         <div className="max-w-7xl mx-auto">
@@ -147,7 +146,7 @@ export default function FAQsPage() {
       {/* CONTENT */}
       <section className="py-20 px-6 md:px-12 lg:px-16">
         <div className="max-w-4xl mx-auto space-y-32">
-          {faqData.map((group, i) => (
+          {faqData.map((group) => (
             <div key={group.category} className="space-y-12">
               <Reveal>
                 <SectionLabel className="mb-8">{group.category}</SectionLabel>
@@ -178,6 +177,6 @@ export default function FAQsPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

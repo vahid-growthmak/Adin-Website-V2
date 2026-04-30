@@ -30,7 +30,7 @@ const experienceTypes = [
 
 export default function ExperiencesPage() {
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HERO SECTION */}
       <section className="relative min-h-[75vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
@@ -189,6 +189,6 @@ export default function ExperiencesPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

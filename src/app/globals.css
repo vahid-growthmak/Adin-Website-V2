@@ -34,15 +34,41 @@
 }
 
 @layer base {
+  /* `overflow-x: hidden` MUST live on `html`, not `body`. Putting it on body
+     creates a scroll container that breaks `position: sticky` for every
+     descendant — which is what makes the homepage's stacked sections render
+     as tall blocks with blank space instead of sticking at the top. */
+  html {
+    overflow-x: clip;
+  }
+
   body {
     background: var(--adin-black);
     color: var(--adin-white);
-    overflow-x: hidden;
-    cursor: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* Custom cursor only replaces the system cursor on devices with a fine
+     pointer — touch and keyboard-only users keep the native cursor. */
+  @media (hover: hover) and (pointer: fine) {
+    body { cursor: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body { cursor: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    /* Skip GSAP's pre-animation hidden state so content never gets stuck
+       invisible if animations are skipped. */
+    .opacity-0 { opacity: 1 !important; }
+  }
 }
+
 
 @layer components {
   /* Buttons */
@@ -299,49 +325,29 @@
     width: 100%;
   }
 
-  /* Sticky Section Stacking System */
-  main > section:not(#contact):not(.scroll-normal) {
-    position: sticky;
-    top: 0;
-    min-height: 100vh;
-    will-change: transform;
+  /* Section stacking is driven by GSAP `ScrollTrigger.pin` (with
+     `pinSpacing: false`) in `src/components/HomepageStacking.tsx`. CSS
+     here just (1) gives every section a solid background so it cleanly
+     covers the section underneath when pinned, and (2) provides a
+     z-index ladder so later sections paint over earlier ones during
+     transitions. Sticky positioning is intentionally NOT used — GSAP
+     pin sets `position: fixed` directly and `position: sticky` would
+     conflict. */
+  main > section {
+    position: relative;
     background-color: var(--adin-black);
   }
 
-  main > section:not(#home)::before {
-    content: '';
-    position: absolute;
-    top: -40px;
-    left: 0;
-    right: 0;
-    height: 40px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent);
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  /* Z-index ladder */
-  main > section:nth-of-type(1) { z-index: 10; }
-  main > section:nth-of-type(2) { z-index: 20; }
-  main > section:nth-of-type(3) { z-index: 30; }
-  main > section:nth-of-type(4) { z-index: 40; }
-  main > section:nth-of-type(5) { z-index: 50; }
-  main > section:nth-of-type(6) { z-index: 60; }
-  main > section:nth-of-type(7) { z-index: 70; }
-  main > section:nth-of-type(8) { z-index: 80; }
-  main > section:nth-of-type(9) { z-index: 90; }
-  main > section:nth-of-type(10) { z-index: 100; }
-  main > section:nth-of-type(11) { z-index: 110; }
-  main > section:nth-of-type(12) { z-index: 120; }
-  main > section:nth-of-type(13) { z-index: 130; }
-
-  @media (max-width: 767px) {
-    main > section {
-      position: relative !important;
-      top: auto !important;
-      min-height: auto !important;
-    }
-  }
+  main > section:nth-of-type(1)  { z-index: 1; }
+  main > section:nth-of-type(2)  { z-index: 2; }
+  main > section:nth-of-type(3)  { z-index: 3; }
+  main > section:nth-of-type(4)  { z-index: 4; }
+  main > section:nth-of-type(5)  { z-index: 5; }
+  main > section:nth-of-type(6)  { z-index: 6; }
+  main > section:nth-of-type(7)  { z-index: 7; }
+  main > section:nth-of-type(8)  { z-index: 8; }
+  main > section:nth-of-type(9)  { z-index: 9; }
+  main > section:nth-of-type(10) { z-index: 10; }
 
   /* Form Input */
   .form-input {
@@ -365,3 +371,4 @@
     border-bottom-color: #0F5E4E;
   }
 }
+

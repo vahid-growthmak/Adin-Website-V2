@@ -2,7 +2,7 @@ import type { Site } from '@/types/site'
 
 export const site: Site = {
   name: 'ADIN NYC',
-  tagline: 'The Change Agency',
+  tagline: 'The Growth Agency',
   description:
     'Strategic PR & communications agency for purpose-driven brands and founders. Building authentic connections between brands and audiences for 25+ years.',
   location: 'New York City',

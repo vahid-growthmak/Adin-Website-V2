@@ -3,6 +3,7 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ReactNode, useRef } from 'react'
+import { cn } from '@/lib/utils'
 
 interface RevealProps {
   children: ReactNode
@@ -56,5 +57,3 @@ export function Reveal({
     </div>
   )
 }
-
-import { cn } from '@/lib/utils'

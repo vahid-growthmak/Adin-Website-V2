@@ -6,14 +6,14 @@ import { DisplayHeading } from '../ui/DisplayHeading'
 
 const testimonials = [
   {
-    quote: "ADIN not only builds brand awareness and sales across multiple lifestyle categories, but also becomes a trusted strategic partner for our clients.",
-    author: "Jessica Williams",
-    role: "FOUNDER, WELLNESS CO",
+    quote: "ADin didn’t just help us get coverage—they changed how our brand is seen. The way they approached our launch made a real difference.",
+    author: "Jamie Morrison",
+    role: "Founder, Vitality Wellness Co.",
   },
   {
-    quote: "The intentional approach ADIN brings to our communications—from our story to our media outreach—has been instrumental in our success and brand authority.",
-    author: "Kevin Park",
-    role: "CEO, LIFESTYLE BRANDS",
+    quote: "The structure and clarity ADin brought to our communications gave us real confidence. They felt like partners, not just an agency.",
+    author: "Rachel Park",
+    role: "CEO, Harvest Table Foods",
   },
 ]
 

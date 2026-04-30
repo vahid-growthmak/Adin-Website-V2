@@ -5,6 +5,7 @@ import gsap from 'gsap'
 import { useRef } from 'react'
 import Image from 'next/image'
 import { Button } from '../ui/Button'
+import { Marquee } from '../ui/Marquee'
 import { site } from '@/data/site'
 
 export function Hero() {
@@ -55,40 +56,44 @@ export function Hero() {
   }, { scope: containerRef })
 
   return (
-    <section id="home" ref={containerRef} className="relative h-screen flex items-center overflow-hidden">
-      <div ref={bgRef} className="absolute inset-0">
-        <Image
-          src="/images/hero-bg.jpg"
-          alt={site.name}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-adin-black/40 via-adin-black/20 to-adin-black" />
-      </div>
+    <section id="home" ref={containerRef} className="relative h-screen flex flex-col overflow-hidden">
+      <div className="relative flex-grow flex items-center">
+        <div ref={bgRef} className="absolute inset-0">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt={site.name}
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-adin-black/40 via-adin-black/20 to-adin-black" />
+        </div>
 
-      <div ref={contentRef} className="relative z-10 w-full px-6 md:px-12 lg:px-16">
-        <div className="max-w-screen-2xl mx-auto">
-          <div className="max-w-4xl">
-            <p className="hero-reveal font-heading font-bold text-adin-green uppercase tracking-[0.3em] text-[11px] mb-6">
-              {site.tagline}
-            </p>
-            <h1 className="hero-reveal font-heading font-black text-white text-[clamp(48px,10vw,120px)] leading-[0.95] tracking-tighter mb-8">
-              We Build Brands That Build Culture<span className="text-adin-green">.</span>
-            </h1>
-            <p className="hero-reveal font-body text-white/60 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
-              ADIN is a strategic communications agency bridging the gap between visionary brands and their communities.
-            </p>
-            <div className="hero-reveal flex flex-wrap gap-4">
-              <Button href="/work" variant="primary">
-                Explore Work
-              </Button>
-              <Button href="/contact" variant="outline">
-                Get In Touch
-              </Button>
+        <div ref={contentRef} className="relative z-10 w-full px-6 md:px-12 lg:px-16">
+          <div className="max-w-screen-2xl mx-auto">
+            <div className="max-w-4xl">
+              <h1 className="hero-reveal font-heading font-black text-white text-[clamp(48px,10vw,120px)] leading-[0.95] tracking-tighter mb-8">
+                The Growth Agency<span className="text-adin-green">.</span>
+              </h1>
+              <p className="hero-reveal font-body text-white/60 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+                ADin transforms bold ideas into influence through strategic communications, helping founders build authority, expand reach, and drive lasting market impact.
+              </p>
+              <div className="hero-reveal flex flex-wrap gap-4">
+                <Button href="/work" variant="primary">
+                  Explore Work
+                </Button>
+                <Button href="/contact" variant="outline">
+                  Get In Touch
+                </Button>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="relative z-20">
+        <Marquee />
       </div>
     </section>
   )

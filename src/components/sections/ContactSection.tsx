@@ -41,6 +41,7 @@ export function ContactSection() {
           src="https://images.unsplash.com/photo-1542811869-c10bcd3b1b31?q=80&w=1474&auto=format&fit=crop"
           alt="NYC Skyline"
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-adin-black/80 via-adin-black/95 to-adin-black" />
@@ -54,11 +55,11 @@ export function ContactSection() {
                 <SectionLabel className="mb-8">Contact Us</SectionLabel>
               </Reveal>
               <DisplayHeading className="text-white text-[clamp(40px,6vw,88px)] leading-[0.95] mb-10">
-                Start a Conversation<span className="text-adin-green">.</span>
+                Start Your Brand Journey With ADin<span className="text-adin-green">.</span>
               </DisplayHeading>
               <Reveal delay={0.4}>
                 <p className="font-body text-white/50 text-xl leading-relaxed mb-16 max-w-lg">
-                  If you are building a brand that aims to create positive impact, we&apos;d love to explore how we can help.
+                  If you’re building a brand with purpose, ADin is ready to help you shape your story, grow your presence, and create lasting impact.
                 </p>
               </Reveal>
               

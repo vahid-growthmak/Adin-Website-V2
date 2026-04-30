@@ -16,7 +16,11 @@ export function AboutSection() {
   useStickyInternalScroll(sectionRef, innerRef)
 
   return (
-    <section id="about" ref={sectionRef} className="bg-adin-black">
+    <section
+      id="about"
+      ref={sectionRef}
+      className="relative bg-adin-black overflow-hidden"
+    >
       <div ref={innerRef} className="py-24 md:py-40 px-6 md:px-12 lg:px-16 border-t border-white/5">
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
@@ -24,19 +28,22 @@ export function AboutSection() {
               <Reveal>
                 <SectionLabel className="mb-8">About ADIN</SectionLabel>
               <DisplayHeading className="text-white text-[clamp(40px,5vw,72px)] leading-[0.9] mb-12">
-                Strategic Partners for Purpose-Driven Founders<span className="text-adin-green">.</span>
+                Strategic PR and Brand Communications Agency<span className="text-adin-green">.</span>
               </DisplayHeading>
               </Reveal>
             </div>
             <div className="lg:col-span-6 lg:offset-1 space-y-8">
               <Reveal delay={0.2}>
                 <p className="font-body text-white/60 leading-relaxed text-lg md:text-xl">
-                  ADIN not only builds brand awareness and sales across multiple lifestyle categories, but also becomes a trusted strategic partner for our clients.
+                  ADin delivers strategic communications that elevate brand presence, strengthen authority, and ensure businesses reach and resonate with the right audiences.
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
                 <p className="font-body text-white/40 leading-relaxed border-l-2 border-adin-green pl-6 text-lg">
-                  From brand launches to global campaigns, we help organizations tell stories that inspire trust, influence culture and drive measurable growth.
+                  We combine media, storytelling, digital amplification, and positioning to shape perception, spark engagement, and build meaningful, lasting brand connections.
+                </p>
+                <p className="font-body text-white/40 leading-relaxed mt-6 text-lg">
+                  From brand strategy to campaigns and launches, ADin helps clients grow influence, amplify their voice, and achieve measurable success in competitive markets.
                 </p>
               </Reveal>
               <Reveal delay={0.4} className="pt-8">

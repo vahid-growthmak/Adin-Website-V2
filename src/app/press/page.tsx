@@ -93,7 +93,7 @@ export default function PressPage() {
   )
 
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HEADER SECTION */}
       <section className="px-6 md:px-12 lg:px-16 pt-40 pb-20 md:pt-48 md:pb-24">
         <div className="max-w-7xl mx-auto">
@@ -252,6 +252,6 @@ export default function PressPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

@@ -17,7 +17,11 @@ export function ServicesSection() {
   useStickyInternalScroll(sectionRef, innerRef)
 
   return (
-    <section id="services" ref={sectionRef} className="bg-adin-black">
+    <section
+      id="services"
+      ref={sectionRef}
+      className="relative bg-adin-black overflow-hidden"
+    >
       <div ref={innerRef} className="flex flex-col">
         <div className="px-6 md:px-12 lg:px-16 pt-32 pb-20 border-b border-white/5">
           <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-8">
@@ -26,12 +30,12 @@ export function ServicesSection() {
                 <SectionLabel className="mb-6">Our Expertise</SectionLabel>
               </Reveal>
               <DisplayHeading className="text-white text-[clamp(48px,8vw,120px)] leading-[0.95]">
-                What We Do<span className="text-adin-green">.</span>
+                Where PR Meets Brand Storytelling<span className="text-adin-green">.</span>
               </DisplayHeading>
             </div>
             <Reveal delay={0.4}>
               <p className="font-body text-white/40 max-w-xs text-lg leading-relaxed">
-                Three integrated disciplines working together to build brand authority.
+                Three integrated disciplines working together to build lasting brand authority.
               </p>
             </Reveal>
           </div>
@@ -47,24 +51,24 @@ export function ServicesSection() {
           <div className="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <FeatureCard
               title="Founder-Focused"
-              description="Direct access to senior counsel. We work side-by-side with founders to translate their vision into influential brand narratives."
+              description="At ADin, founders work directly with senior experts to transform their vision into powerful narratives that build trust, influence, and long-term growth."
               icon="circle"
             />
             <FeatureCard
               title="Integrated Strategy"
-              description="A seamless blend of media relations, experiential activations, and high-impact content designed for maximum cultural reach."
+              description="We align communications, media, experiences, and content into cohesive strategies that strengthen brand presence and drive meaningful engagement across channels."
               icon="square"
               delay={0.1}
             />
             <FeatureCard
               title="Results-Driven"
-              description="We measure success by your growth. Our work is tied directly to placements, authority, and measurable business outcomes."
+              description="Our work is focused on measurable outcomes, from stronger brand authority to increased audience engagement and tangible business growth."
               icon="diamond"
               delay={0.2}
             />
             <FeatureCard
-              title="Ecosystem Expertise"
-              description="Strategic command across complex sales cycles and consumer landscapes. We navigate the unique demands of every ecosystem."
+              title="B2B, B2C & B2B2C Expertise"
+              description="We navigate complex business and consumer landscapes, crafting tailored strategies that connect brands with the right audiences across diverse markets."
               icon="sun"
               delay={0.3}
             />
@@ -89,6 +93,7 @@ function ServiceItem({ service, index }: { service: Service; index: number }) {
                   src={service.image}
                   alt={service.title}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
               </div>

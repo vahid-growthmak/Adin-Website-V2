@@ -5,7 +5,6 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { DisplayHeading } from '@/components/ui/DisplayHeading'
 import { Button } from '@/components/ui/Button'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { animate } from 'framer-motion'
@@ -15,26 +14,26 @@ const team = [
     name: 'Sue Asci',
     role: 'Founder & CEO',
     image: '/images/team-sue.png',
-    bio: 'With over 25 years in strategic communications, Sue founded ADIN NYC to bring purpose-driven PR to brands making a meaningful difference in the world.'
+    bio: 'With over 25 years of experience in strategic communications, Sue founded ADin NYC to support purpose-driven brands making a meaningful impact.'
   },
   {
     name: 'Sarah Chen',
     role: 'Director of Communications',
     image: '/images/team-2.png',
-    bio: 'Sarah leads our media relations practice, cultivating relationships with top-tier journalists across lifestyle, health, and consumer verticals.'
+    bio: 'Sarah leads media relations, building strong connections with top-tier journalists across lifestyle, health, and consumer sectors.'
   },
   {
     name: 'Marcus Williams',
     role: 'Director of Experiences',
     image: '/images/team-3.png',
-    bio: 'Marcus brings 15 years of experiential marketing expertise, creating immersive brand moments that forge lasting consumer connections.'
+    bio: 'Marcus Williams brings 15 years of experience, designing immersive brand experiences that engage audiences and create meaningful, lasting connections.'
   }
 ]
 
 const values = [
   {
     title: 'Authentic Storytelling',
-    description: 'We craft narratives that are true to your brand\'s identity and resonate deeply with target audiences. Authenticity isn\'t a strategy — it\'s our foundation.',
+    description: 'We create narratives that stay true to your brand and connect naturally with your audience. For us, authenticity is not a tactic, it’s the starting point.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-adin-green">
         <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -43,7 +42,7 @@ const values = [
   },
   {
     title: 'Cultural Relevance',
-    description: 'We position brands at the intersection of culture, media and society to maximize impact and reach. We don\'t follow trends — we help our clients shape them.',
+    description: 'We position brands where culture, media, and society meet, helping them stay relevant, visible, and ahead of the conversation.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-adin-green">
         <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
@@ -53,7 +52,7 @@ const values = [
   },
   {
     title: 'Measurable Impact',
-    description: 'Every strategy we execute is designed to deliver quantifiable results and sustainable brand growth. We tie every initiative to outcomes that matter to your business.',
+    description: 'Every strategy we shape is designed to deliver clear results and long-term growth, with a focus on outcomes that truly matter to your business.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-adin-green">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -85,7 +84,7 @@ function Counter({ target, suffix = '', duration = 2 }: { target: number, suffix
 
 export default function AboutPage() {
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* PAGE HERO */}
       <section className="relative min-h-screen flex items-end">
         <div className="absolute inset-0">
@@ -101,12 +100,12 @@ export default function AboutPage() {
         <div className="relative z-10 w-full px-6 md:px-12 lg:px-16 pb-20">
           <div className="max-w-7xl mx-auto">
             <Reveal>
-              <SectionLabel className="mb-6">About ADIN NYC</SectionLabel>
+              <SectionLabel className="mb-6">ABOUT ADIN NYC</SectionLabel>
               <DisplayHeading className="text-white max-w-4xl mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px]">
-                We Are The Change Agency.
+                A Strategic Communications Partner
               </DisplayHeading>
               <p className="text-white/60 max-w-xl text-xl md:text-2xl leading-relaxed">
-                Purpose-driven communications for founders and brands shaping a better future.
+                We deliver purpose-driven communications for founders and brands shaping a better, more meaningful future.
               </p>
             </Reveal>
           </div>
@@ -124,10 +123,13 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-8 text-white/50 text-lg leading-relaxed max-w-xl">
                 <p>
-                  ADIN NYC is a strategic communications firm headquartered in the heart of New York City. Founded with over 25 years of collective expertise, we exist to amplify the voices of founders, innovators, and purpose-driven brands who are actively changing the world.
+                  ADin NYC is a strategic communications firm based in New York City, with over 30 years of experience, helping founders and purpose-driven brands build influence and shape the future. Our work is rooted in understanding each brand’s vision and translating it into clear, compelling communication that resonates with the right audience.
                 </p>
                 <p>
-                  We are not a traditional PR agency. We are architects of brand narrative — a team of strategic thinkers, storytellers, and relationship builders who understand that in today&apos;s saturated media landscape, the brands that win are the ones with the most compelling and authentic stories to tell.
+                  We’re not a traditional PR agency. We’re a team of strategists, storytellers, and relationship builders who believe strong brands are built on clarity and authenticity. By combining insight and creativity, we help brands stand out in competitive markets.
+                </p>
+                <p>
+                  From emerging wellness startups to established food and beverage brands, we work closely with our clients to build credibility, gain meaningful media coverage, and drive real business growth.
                 </p>
               </div>
               <div className="flex gap-6 mt-12">
@@ -162,12 +164,12 @@ export default function AboutPage() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <Reveal>
-            <SectionLabel className="mb-10">Our Philosophy</SectionLabel>
+            <SectionLabel className="mb-10">OUR PHILOSOPHY</SectionLabel>
             <DisplayHeading className="text-white mb-10 text-3xl md:text-5xl lg:text-6xl italic font-light">
-              &quot;Purpose-Driven Brands Deserve Powerful Stories.&quot;
+              Strategic Storytelling for Purpose-Driven Brands
             </DisplayHeading>
             <p className="text-white/50 text-xl leading-relaxed">
-              We believe that the most transformative brands are those with a genuine mission to improve lives, communities, and the planet. Our role is to ensure the world hears about them. Every strategy we develop is guided by an commitment to authenticity, impact, and excellence.
+              We believe the most impactful brands are those with a genuine mission to make a difference in people’s lives, communities, and the world. Our role is to make sure those stories are seen and heard. Every strategy we create, every story we tell, and every experience we design is rooted in authenticity, purpose, and meaningful impact.
             </p>
           </Reveal>
         </div>
@@ -230,7 +232,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             <div className="text-center md:text-left">
-              <Counter target={25} suffix="+" />
+              <Counter target={30} suffix="+" />
               <p className="text-adin-black/50 uppercase tracking-widest font-bold text-[10px] mt-4">Years Experience</p>
             </div>
             <div className="text-center md:text-left">
@@ -253,10 +255,13 @@ export default function AboutPage() {
       <section className="py-40 px-6 md:px-12 lg:px-16 text-center">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <SectionLabel className="mb-6">Next Steps</SectionLabel>
+            <SectionLabel className="mb-6">NEXT STEPS</SectionLabel>
             <DisplayHeading className="text-white mb-10 text-4xl md:text-6xl lg:text-7xl leading-tight">
-              Ready to Build Your Brand Story?
+              Ready to build your brand story?
             </DisplayHeading>
+            <p className="text-white/40 text-xl leading-relaxed mb-12 max-w-2xl mx-auto">
+              Let&apos;s talk about your brand, your mission, and how ADIN NYC can help you tell a story that changes everything.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/contact" className="px-12 py-6">Start a Conversation →</Button>
               <Button href="/work" variant="outline" className="px-12 py-6">View Case Studies</Button>
@@ -264,6 +269,6 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

@@ -37,7 +37,7 @@ const galleryImages = [
 
 export default function FoodBeverageIndustryPage() {
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HERO SECTION */}
       <section className="relative min-h-[75vh] flex items-end">
         <div className="absolute inset-0">
@@ -200,6 +200,6 @@ export default function FoodBeverageIndustryPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

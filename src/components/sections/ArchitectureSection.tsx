@@ -1,44 +1,46 @@
 'use client'
 
 import { Reveal } from '../ui/Reveal'
-import { SectionLabel } from '../ui/SectionLabel'
 import { Button } from '../ui/Button'
 import Image from 'next/image'
 
 export function ArchitectureSection() {
   return (
-    <section className="bg-adin-black py-28 px-6 md:px-12 lg:px-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div className="relative h-[580px] w-full overflow-hidden">
-            <Reveal direction="left" className="h-full">
-              <Image
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2400&auto=format&fit=crop"
-                alt="ADIN Approach"
-                fill
-                className="object-cover"
-              />
-            </Reveal>
-          </div>
-          <div>
-            <Reveal direction="right">
-              <SectionLabel className="mb-6">The ADIN Difference</SectionLabel>
-              <h2 className="font-heading font-black tracking-tighter leading-none text-white mb-8 text-4xl md:text-5xl lg:text-6xl">
-                Not a Campaign.<br />An Architecture.
+    <section className="relative h-screen flex items-center overflow-hidden bg-adin-black">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop"
+          alt="Strategic Brand Advisory"
+          fill
+          sizes="100vw"
+          className="object-cover opacity-60"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-adin-black via-adin-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-adin-black/40" />
+      </div>
+
+      <div className="relative z-10 w-full px-6 md:px-12 lg:px-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl">
+            <Reveal>
+              <p className="font-heading font-black text-white uppercase tracking-[0.2em] text-[11px] mb-8">
+                ADVISORY
+              </p>
+              <h2 className="font-heading font-black text-white text-[clamp(48px,8vw,100px)] leading-[0.95] tracking-tighter mb-10">
+                Strategic Brand Advisory<span className="text-adin-green">.</span>
               </h2>
-              <div className="space-y-6 mb-10">
-                <p className="font-body text-white/60 text-lg leading-relaxed">
-                  At ADIN, we don&apos;t just execute PR campaigns — we build communications architectures that define how your brand speaks to the world. Our approach is built on deep listening, strategic positioning, and relentless follow-through.
+              <div className="space-y-6 mb-12">
+                <p className="font-body text-white/70 text-lg md:text-xl leading-relaxed">
+                  ADin works with founders and leadership teams to define positioning, refine narratives, and build strategies that drive influence, credibility, and measurable growth.
                 </p>
-                <p className="font-body text-white/50 text-base leading-relaxed">
-                  We begin every engagement by immersing ourselves in your world — your category, your competition, your customer, and your aspirations. Only then do we craft strategies that are bespoke to you and built for the long term.
-                </p>
-                <p className="font-body text-white/50 text-base leading-relaxed">
-                  The result is communications that feel inevitable — stories so well-crafted and perfectly placed that they don&apos;t just generate coverage, they build brand equity, deepen loyalty, and drive real business outcomes.
+                <p className="font-body text-white/50 text-base md:text-lg leading-relaxed">
+                  From emerging startups to global brands, we help organizations navigate complexity and establish a distinct, lasting presence in competitive markets.
                 </p>
               </div>
-              <Button href="/contact" variant="primary">
-                Work With Us →
+              <Button href="/work" variant="primary" className="bg-white text-adin-black border-white hover:bg-transparent hover:text-white transition-all duration-500">
+                Explore Our Work →
               </Button>
             </Reveal>
           </div>

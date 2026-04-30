@@ -12,8 +12,8 @@ const services = [
     id: 'communications',
     number: '01',
     label: 'Communications',
-    title: 'Strategic Media Relations & Brand Narratives',
-    description: 'Strategic media relations, thought leadership, and brand narratives that build credibility and drive coverage. We tell your story to the journalists and outlets that matter most to your audience.',
+    title: 'Strategic Media Relations & Brand Communications',
+    description: 'We deliver strategic media relations, brand messaging, and PR campaigns that position your brand with credibility and influence across key media channels.',
     image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2000&auto=format&fit=crop',
     capabilities: ['Media Relations', 'Reputation Management', 'Crisis Communications', 'Thought Leadership', 'Press Materials', 'Media Training'],
     link: '/services/communications'
@@ -22,31 +22,31 @@ const services = [
     id: 'experiences',
     number: '02',
     label: 'Experiences',
-    title: 'Immersive Brand Activations & Events',
-    description: 'Immersive brand activations and events that create lasting connections between your brand and your audience. From intimate influencer experiences to large-scale public launches.',
+    title: 'Immersive Brand Experiences & Activations',
+    description: 'We design and execute brand activations and experiential campaigns that connect with audiences, create engagement, and build lasting brand recall.',
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop',
     capabilities: ['Brand Activations', 'Product Launches', 'Community Events', 'Influencer Experiences', 'Pop-Ups'],
     link: '/services/experiences',
     reverse: true
   },
   {
-    id: 'content-creation',
+    id: 'content-narrative',
     number: '03',
     label: 'Content Creation',
-    title: 'Multimedia Content That Amplifies Your Story',
-    description: 'Compelling multimedia content that amplifies your brand story across digital channels. From editorial copy to social content to high-production video, we create content that converts.',
+    title: 'Multimedia Content & Brand Storytelling',
+    description: 'We create high-impact content across digital platforms, combining storytelling, visual production, and social strategy to amplify your brand voice.',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop',
-    capabilities: ['Copywriting', 'Visual Production', 'Social Content', 'Video', 'Editorial'],
-    link: '/services/content-creation'
+    capabilities: ['Copywriting', 'Visual Production', 'Social Content', 'Video Production', 'Editorial Content'],
+    link: '/services/content-narrative'
   },
   {
     id: 'advisory',
     number: '04',
     label: 'Strategic Advisory',
-    title: 'High-Level Counsel for Founders & Executives',
-    description: 'High-level counsel for founders and executives navigating brand positioning, investor relations, and market entry. We sit at the table with you and help you make the decisions that define your brand\'s future.',
+    title: 'Brand Strategy & Executive Advisory',
+    description: 'We provide senior-level strategic advisory for founders and leadership teams, helping define brand positioning, messaging frameworks, and long-term growth strategies.',
     image: 'https://images.unsplash.com/photo-1560264280-88b68371db39?q=80&w=2000&auto=format&fit=crop',
-    capabilities: ['Brand Positioning', 'Messaging Frameworks', 'Investor Communications', 'Growth Advisory'],
+    capabilities: ['Brand Positioning', 'Messaging Frameworks', 'Investor Communications', 'Market Entry Strategy', 'Growth Advisory'],
     link: '/services/advisory',
     reverse: true
   }
@@ -54,7 +54,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* PAGE HERO */}
       <section className="relative min-h-[70vh] flex items-end">
         <div className="absolute inset-0">
@@ -70,12 +70,12 @@ export default function ServicesPage() {
         <div className="relative z-10 w-full px-6 md:px-12 lg:px-16 pb-20">
           <div className="max-w-7xl mx-auto">
             <Reveal>
-              <SectionLabel className="mb-6">What We Do</SectionLabel>
+              <SectionLabel className="mb-6">OUR SERVICES</SectionLabel>
               <DisplayHeading className="text-white mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px]">
-                Communication for<br />Purpose-Driven Brands.
+                Strategic Communications That Drive Brand Growth
               </DisplayHeading>
               <p className="text-white/50 max-w-xl text-xl md:text-2xl leading-relaxed">
-                Three disciplines. One strategic vision. Measurable results.
+                Four disciplines. One strategic vision. Measurable results
               </p>
             </Reveal>
           </div>
@@ -194,25 +194,25 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                step: 'Phase One',
+                step: 'PHASE ONE',
                 title: 'Discovery',
-                desc: 'Deep-dive research and stakeholder immersion. We learn everything about your brand before developing a strategy.',
+                desc: 'We start by understanding your brand, audience, and market. Through research and stakeholder alignment, we build a clear foundation for strategy.',
                 icon: (
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                 )
               },
               {
-                step: 'Phase Two',
+                step: 'PHASE TWO',
                 title: 'Execution',
-                desc: 'Precise activation across every relevant channel. We deploy our media relationships to bring your strategy to life.',
+                desc: 'We activate your strategy across the right channels, combining media, content, and experiences to deliver consistent and impactful brand visibility.',
                 icon: (
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 )
               },
               {
-                step: 'Phase Three',
+                step: 'PHASE THREE',
                 title: 'Measurement',
-                desc: 'Continuous analysis of campaign performance against KPIs. We ensure every action drives meaningful impact.',
+                desc: 'We track performance against clear goals, providing transparent reporting and continuous optimization to ensure meaningful, measurable business results.',
                 icon: (
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
                 )
@@ -245,20 +245,20 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                title: '25+ Years Experience',
-                desc: "Two-and-a-half decades of navigating the media landscape means we've seen it all — and we know exactly how to get your brand in front of the right people."
+                title: '25+ Years of Experience',
+                desc: 'With over two decades in strategic communications, we understand how to position brands in a constantly evolving media landscape.'
               },
               {
                 title: 'Founder-First Approach',
-                desc: 'We work directly with founders and senior leadership. Your vision drives our strategy, and your success is our singular focus.'
+                desc: 'You work directly with senior experts. We stay close to your vision, ensuring every strategy is aligned with your goals from the start.'
               },
               {
                 title: 'Purpose-Driven Focus',
-                desc: 'We partner with brands that are genuinely trying to make a difference. This focus makes us sharper, more passionate advocates.'
+                desc: 'We partner with brands that are committed to making a difference, allowing us to create more meaningful and impactful work.'
               },
               {
                 title: 'Measurable Results',
-                desc: 'We hold ourselves accountable to real outcomes — placements, impressions, brand lift, and business growth.'
+                desc: 'We turn strategy into results, helping your brand gain visibility, build credibility, and achieve consistent, measurable growth.'
               }
             ].map((diff, i) => (
               <Reveal key={i} delay={i * 0.1}>
@@ -282,17 +282,17 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               {
-                quote: "ADIN transformed our launch strategy completely. Their media relationships and strategic storytelling generated coverage we could never have achieved on our own.",
+                quote: "ADin completely changed how we approached our launch. Their media connections and storytelling helped us get coverage we wouldn’t have reached on our own.",
                 author: "Alexandra Torres",
                 role: "Founder, Green Root Wellness"
               },
               {
-                quote: "The event ADIN produced for our brand exceeded every expectation. The experience they created left a lasting impression on every journalist and influencer who attended.",
+                quote: "The event ADin created for us was beyond what we expected. It felt thoughtful, well-executed, and made a real impression on everyone who attended.",
                 author: "David Kim",
                 role: "CEO, Nourish Collective"
               },
               {
-                quote: "Their advisory work helped us navigate a pivotal brand repositioning with confidence. Sue and her team are true strategic partners — honest and deeply invested.",
+                quote: "They guided us through a major brand shift with clarity and confidence. The team is honest, sharp, and genuinely invested in helping you succeed.",
                 author: "Maya Patel",
                 role: "Co-Founder, Rooted Foods"
               }
@@ -364,6 +364,6 @@ export default function ServicesPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

@@ -5,44 +5,43 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { DisplayHeading } from '@/components/ui/DisplayHeading'
 import { Button } from '@/components/ui/Button'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const serviceTiles = [
   {
     num: '01',
     title: 'Media Relations',
-    text: 'Proactive and reactive pitching to targeted journalists across print, digital, broadcast, and podcast platforms. We secure coverage that moves the needle — not just fills a clip report.'
+    text: 'We execute targeted media relations across print, digital, broadcast, and podcasts, securing coverage that boosts brand visibility, credibility, and audience engagement.'
   },
   {
     num: '02',
     title: 'Press Material Development',
-    text: 'Compelling press releases, media kits, brand bibles, and pitch decks crafted to communicate your story with precision and narrative power that resonates with today&apos;s editors.'
+    text: 'ADin creates press releases, media kits, and brand content that clearly communicate your story and attract strong media attention.'
   },
   {
     num: '03',
     title: 'Media Training',
-    text: 'Prepare your founders, executives, and spokespeople to speak with confidence, clarity, and conviction — whether facing a live broadcast, print interview, or podcast conversation.'
+    text: 'Our media training prepares founders and executives to speak confidently across interviews, broadcasts, and podcasts while maintaining clear messaging and strong brand presence.'
   },
   {
     num: '04',
     title: 'Messaging Frameworks',
-    text: 'Develop the core narratives that anchor your brand&apos;s public identity — ensuring consistent, resonant messaging across all communications channels and stakeholder touchpoints.'
+    text: 'We develop clear messaging frameworks that define your brand voice and ensure consistent communication across channels, strengthening positioning and audience connection.'
   },
   {
     num: '05',
     title: 'Reputation Management',
-    text: 'Long-term brand equity building through strategic narrative control, executive profiling, awards submissions, and ongoing media presence management.'
+    text: 'ADin builds long-term brand credibility through strategic reputation management, maintaining consistent media presence and strong narrative control across key communication channels.'
   },
   {
     num: '06',
     title: 'Crisis Communications',
-    text: 'Rapid-response protocols, stakeholder messaging, media statements, and real-time counsel to protect your brand&apos;s reputation when it matters most.'
+    text: 'Our crisis communication strategies deliver rapid response, clear messaging, and effective media handling to protect your brand reputation during critical situations.'
   }
 ]
 
 export default function CommunicationsPage() {
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HERO SECTION */}
       <section className="relative min-h-[75vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
@@ -59,10 +58,10 @@ export default function CommunicationsPage() {
           <Reveal>
             <SectionLabel className="mb-6">Communications</SectionLabel>
             <DisplayHeading className="text-white max-w-4xl mb-8 text-4xl md:text-6xl lg:text-7xl xl:text-8xl">
-              Strategic Communications for Purpose-Driven Brands.
+              Shaping Brands Through Strategic Communications
             </DisplayHeading>
             <p className="text-white/60 max-w-2xl text-xl leading-relaxed">
-              Building credibility, shaping narratives, and driving meaningful media coverage for brands that matter.
+              We help brands increase visibility, build credibility, and connect with the right audience through strategic communication.
             </p>
           </Reveal>
         </div>
@@ -87,21 +86,21 @@ export default function CommunicationsPage() {
                 Strategic Media Relations for Founders and Brands.
               </DisplayHeading>
               <p className="text-white/50 text-xl leading-relaxed mb-12">
-                We don&apos;t spray-and-pray. Every pitch is crafted for specific journalists and outlets with deep relevance to your brand story.
+                We focus on targeted media outreach, not mass pitching. Every story is crafted for the right journalists and platforms with strong relevance to your brand. ADin builds trusted relationships across lifestyle, health, business, and culture media to secure meaningful coverage that increases visibility and audience reach.
               </p>
               <div className="space-y-10">
                 {[
                   {
-                    title: 'Reputation Management',
-                    text: 'We proactively shape how your brand is perceived — monitoring narratives and ensuring consistent credibility.'
+                    title: 'Audience and Message Alignment',
+                    text: 'We understand your audience and refine your messaging to ensure consistent communication that connects clearly and effectively across all channels.'
                   },
                   {
-                    title: 'Crisis Communications',
-                    text: 'When the unexpected happens, our rapid-response approach protects your brand equity with clarity and confidence.'
+                    title: 'Media Outreach and Engagement',
+                    text: 'Our targeted media outreach builds relationships with journalists and platforms to secure relevant coverage that increases visibility and audience reach.'
                   },
                   {
-                    title: 'Thought Leadership',
-                    text: 'We transform founders into recognized industry voices through editorial strategies that establish lasting authority.'
+                    title: 'Consistent Brand Communication',
+                    text: 'We ensure your brand voice remains consistent across all channels, building trust, recognition, and long-term credibility with your audience and market presence.'
                   }
                 ].map((item) => (
                   <div key={item.title} className="flex gap-6">
@@ -157,6 +156,40 @@ export default function CommunicationsPage() {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <section className="bg-adin-black py-32 px-6 md:px-12 lg:px-16 border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <Reveal className="mb-20">
+            <SectionLabel className="mb-4">Client Voices</SectionLabel>
+            <DisplayHeading className="text-white text-3xl sm:text-4xl md:text-5xl">What Our Clients Say</DisplayHeading>
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            {[
+              {
+                quote: "During COVID, ADin helped us bring together experts and media across different locations to run a campaign that reached nearly 50 million people across TV, radio, print, and online. It had a real impact on our visibility.",
+                author: "Neal Mercado",
+                role: "CMO, Designs for Health"
+              },
+              {
+                quote: "ADin has a strong ability to spot the right opportunities and trends. For founders like me, that kind of insight is incredibly valuable. They don’t just get coverage, they help position your brand in the right conversations.",
+                author: "Kari Warberg Block",
+                role: "CEO & Founder, EarthKind"
+              }
+            ].map((t, i) => (
+              <Reveal key={i} delay={i * 0.1}>
+                <div className="border-t border-white/10 pt-12 h-full flex flex-col justify-between">
+                  <p className="text-white/70 italic text-lg leading-relaxed mb-10">&quot;{t.quote}&quot;</p>
+                  <div>
+                    <p className="text-white font-heading font-bold text-sm uppercase tracking-tight">{t.author}</p>
+                    <p className="text-white/30 text-[10px] font-bold uppercase tracking-widest mt-1">{t.role}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA SECTION */}
       <section className="relative py-48 px-6 md:px-12 lg:px-16 overflow-hidden">
         <div className="absolute inset-0">
@@ -183,6 +216,6 @@ export default function CommunicationsPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

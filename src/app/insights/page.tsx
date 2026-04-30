@@ -8,7 +8,6 @@ import { articles } from '@/data/insights'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 
 export default function InsightsPage() {
   const featured = articles[0]
@@ -16,17 +15,17 @@ export default function InsightsPage() {
   const [email, setEmail] = useState('')
 
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HERO SECTION */}
       <section className="px-6 md:px-12 lg:px-16 pt-40 pb-20 md:pt-48 md:pb-24 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <Reveal>
             <SectionLabel className="mb-6">Journal</SectionLabel>
             <DisplayHeading className="text-white mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px]">
-              Insights for<br />Purpose-Driven Brands.
+              Brand Insights, Ideas, and Industry Articles
             </DisplayHeading>
             <p className="text-white/50 max-w-2xl leading-relaxed text-xl">
-              Thought leadership, trend analysis, and strategic perspectives from the ADIN NYC team.
+              Stay updated with trends, insights, and ideas shaping modern brand communication.
             </p>
           </Reveal>
         </div>
@@ -114,16 +113,29 @@ export default function InsightsPage() {
               <Reveal>
                 <SectionLabel className="text-adin-green mb-6">FAQ</SectionLabel>
                 <DisplayHeading className="text-adin-black mb-6 text-3xl md:text-5xl tracking-tight leading-none">
-                  About Our Insights.
+                  About Our Insights
                 </DisplayHeading>
-                <p className="text-adin-black/50 text-lg">Questions about our content and how to contribute.</p>
+                <p className="text-adin-black/50 text-lg">Common questions about our articles, content, and contributions.</p>
               </Reveal>
             </div>
             <div className="lg:col-span-8 space-y-0">
               {[
-                { q: 'How often do you publish new content?', a: 'We publish new articles, trend analyses, and perspective pieces on a monthly basis. Subscribers receive content as soon as it\'s published.' },
-                { q: 'Can I contribute a guest article?', a: 'We selectively accept guest contributions from industry experts, brand founders, and practitioners. Please reach out through our contact page.' },
-                { q: 'Can I republish or share ADIN NYC content?', a: 'Articles may be shared with proper attribution and a link back. For republication, please contact us for permissions.' }
+                { 
+                  q: 'What type of content can I find in this blog section?', 
+                  a: 'Our blog features insights, industry trends, and practical ideas around brand strategy, PR, content, and communication to help businesses grow and stay relevant.' 
+                },
+                { 
+                  q: 'How often do you publish new content?', 
+                  a: 'We regularly publish fresh articles covering the latest trends, strategies, and insights to keep you informed and updated on what’s happening in the industry.' 
+                },
+                { 
+                  q: 'How can these blogs help my business?', 
+                  a: 'Our blogs provide actionable insights that help improve brand visibility, communication strategies, audience engagement, and overall business growth.' 
+                },
+                { 
+                  q: 'Can I share or use the content from this blog?', 
+                  a: 'Yes, you can share our blog content for learning and reference, but proper credit to ADin is appreciated when using or referencing our insights.' 
+                }
               ].map((faq, i) => (
                 <Reveal key={i}>
                   <div className="border-b border-adin-black/10 py-8">
@@ -171,6 +183,6 @@ export default function InsightsPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

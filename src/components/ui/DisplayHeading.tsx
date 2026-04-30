@@ -45,8 +45,15 @@ export function DisplayHeading({
   }, { scope: containerRef })
 
   return (
-    <div ref={containerRef} className="overflow-hidden py-4">
-      <Tag ref={textRef} className={cn('display-heading font-heading font-black tracking-tighter -my-4', className)}>
+    <div ref={containerRef} className="overflow-hidden">
+      <Tag
+        ref={textRef}
+        // pb-[0.25em] gives the Tag's box room for descenders (g/y/j/p) on
+        // tight-leading headings. The padding is on the Tag — not the
+        // container — so `em` resolves against the heading's own font-size
+        // and scales with the responsive `clamp()` sizes used at call sites.
+        className={cn('display-heading font-heading font-black tracking-tighter pb-[0.25em]', className)}
+      >
         {children}
       </Tag>
     </div>

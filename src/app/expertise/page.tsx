@@ -58,7 +58,7 @@ const industries = [
 
 export default function ExpertisePage() {
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HERO SECTION */}
       <section className="relative min-h-[100vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
@@ -235,6 +235,6 @@ export default function ExpertisePage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

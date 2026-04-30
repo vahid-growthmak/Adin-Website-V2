@@ -1,42 +1,16 @@
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
 import { RefObject } from 'react'
 
 /**
- * Hook to handle internal scrolling for sections that are sticky but taller than the viewport.
+ * No-op kept so existing call sites compile. The sticky-stacking effect this
+ * hook used to drive was removed because the GSAP inner-scroll math couldn't
+ * reliably stay in sync with the browser's sticky duration on variable-height
+ * sections, which produced visible dead zones during scroll.
+ *
+ * Sections now render in normal flow at their natural height.
  */
 export function useStickyInternalScroll(
-  sectionRef: RefObject<HTMLElement | null>,
-  innerRef: RefObject<HTMLElement | null>
+  _sectionRef: RefObject<HTMLElement | null>,
+  _innerRef: RefObject<HTMLElement | null>,
 ) {
-  useGSAP(() => {
-    const section = sectionRef.current
-    const inner = innerRef.current
-    
-    if (!section || !inner) return
-
-    // Don't apply on mobile as sticky is disabled in CSS
-    const isMobile = window.matchMedia('(max-width: 767px)').matches
-    if (isMobile) return
-
-    const updateScroll = () => {
-      const scrollDist = Math.max(0, inner.scrollHeight - window.innerHeight)
-      
-      if (scrollDist <= 0) return
-
-      gsap.to(inner, {
-        y: -scrollDist,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: () => `+=${scrollDist}`,
-          scrub: 0.5,
-          invalidateOnRefresh: true,
-        },
-      })
-    }
-
-    updateScroll()
-  }, { scope: sectionRef })
+  // intentionally empty
 }
