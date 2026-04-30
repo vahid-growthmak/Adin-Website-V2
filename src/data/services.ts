@@ -55,4 +55,22 @@ export const services: Service[] = [
     ],
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop',
   },
+  {
+    id: 'digital-enablement',
+    title: 'Digital Enablement',
+    href: '/services/digital-enablement',
+    icon: '04',
+    tagline: 'White-label digital infrastructure for agencies and brands.',
+    description:
+      'ADin provides turnkey digital services — websites, content systems, analytics, and growth infrastructure — engineered for partners and agencies to deliver under their own brand.',
+    features: [
+      'White-Label Web Development',
+      'Content Management Systems',
+      'SEO & Performance',
+      'Analytics & Reporting',
+      'Marketing Automation',
+      'Partner Enablement',
+    ],
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop',
+  },
 ]

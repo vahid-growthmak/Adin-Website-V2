@@ -35,6 +35,7 @@ export const navigation: Navigation = {
         { label: 'Brand Experiences', href: '/services/experiences' },
         { label: 'Content Narrative', href: '/services/content-narrative' },
         { label: 'Strategic Brand Advisory', href: '/services/advisory' },
+        { label: 'Digital Enablement', href: '/services/digital-enablement' },
       ],
     },
     industries: {

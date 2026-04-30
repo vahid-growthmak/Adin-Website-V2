@@ -8,19 +8,18 @@ import { cn } from '@/lib/utils'
 import { ContactSection } from '@/components/sections/ContactSection'
 
 interface PageProps {
-  params: {
-    slug: string
-  }
+  params: Promise<{ slug: string }>
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return Object.keys(serviceDetails).map((slug) => ({
     slug,
   }))
 }
 
-export default function ServiceDetailPage({ params }: PageProps) {
-  const service = serviceDetails[params.slug]
+export default async function ServiceDetailPage({ params }: PageProps) {
+  const { slug } = await params
+  const service = serviceDetails[slug]
 
   if (!service) {
     notFound()

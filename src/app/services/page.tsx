@@ -49,6 +49,16 @@ const services = [
     capabilities: ['Brand Positioning', 'Messaging Frameworks', 'Investor Communications', 'Market Entry Strategy', 'Growth Advisory'],
     link: '/services/advisory',
     reverse: true
+  },
+  {
+    id: 'digital-enablement',
+    number: '05',
+    label: 'Digital Enablement',
+    title: 'White-Label Digital Infrastructure',
+    description: 'We deliver turnkey digital services — websites, content systems, analytics, and growth infrastructure — engineered for partners and agencies to ship under their own brand.',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop',
+    capabilities: ['White-Label Web Development', 'Content Management Systems', 'SEO & Performance', 'Analytics & Reporting', 'Marketing Automation', 'Partner Enablement'],
+    link: '/services/digital-enablement'
   }
 ]
 
