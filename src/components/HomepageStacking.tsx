@@ -49,6 +49,13 @@ export function HomepageStacking() {
 
         sections.forEach((section) => {
           if (section.id === 'contact-section') return
+          // Hero has its own scroll-driven fade and parallax in
+          // Hero.tsx. Pinning it here would stack a second
+          // scroll-driven transform on the same subtree, which makes
+          // the headline visibly shake as the two transforms fight
+          // sub-pixel positions on every scroll frame. About rises in
+          // and covers Hero anyway, so skip the pin here.
+          if (section.id === 'home') return
           if (section.offsetHeight > window.innerHeight + pinSlack) return
 
           ScrollTrigger.create({
