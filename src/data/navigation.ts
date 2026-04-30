@@ -7,7 +7,6 @@ export const navigation: Navigation = {
     { label: 'Services', href: '/services' },
     { label: 'Our Approach', href: '/our-approach' },
     { label: 'Case Studies', href: '/work' },
-    { label: 'Clients', href: '/clients' },
     { label: 'Insights', href: '/insights' },
   ],
   mobile: [
@@ -32,10 +31,10 @@ export const navigation: Navigation = {
     services: {
       heading: 'Services',
       links: [
-        { label: 'Communications', href: '/services/communications' },
-        { label: 'Experiences', href: '/services/experiences' },
-        { label: 'Content Creation', href: '/services/content-creation' },
-        { label: 'Advisory', href: '/services/advisory' },
+        { label: 'Strategic Communications', href: '/services/communications' },
+        { label: 'Brand Experiences', href: '/services/experiences' },
+        { label: 'Content Narrative', href: '/services/content-narrative' },
+        { label: 'Strategic Brand Advisory', href: '/services/advisory' },
       ],
     },
     industries: {
@@ -43,7 +42,6 @@ export const navigation: Navigation = {
       links: [
         { label: 'Wellness', href: '/wellness' },
         { label: 'Food & Beverage', href: '/food-beverage' },
-        { label: 'Clients', href: '/clients' },
       ],
     },
     resources: {

@@ -7,7 +7,10 @@ export function TestimonialsSection() {
   const featured = testimonials.filter(t => t.featured)
 
   return (
-    <section id="testimonials" className="bg-adin-black py-32 md:py-48 px-6 md:px-12 lg:px-16 border-t border-white/5 scroll-normal">
+    <section
+      id="testimonials"
+      className="relative bg-adin-black py-32 md:py-48 px-6 md:px-12 lg:px-16 border-t border-white/5"
+    >
       <div className="max-w-screen-2xl mx-auto">
         <div className="max-w-3xl mb-24">
           <Reveal>

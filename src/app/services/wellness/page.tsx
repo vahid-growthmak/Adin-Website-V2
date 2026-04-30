@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 export default function WellnessIndustryPage() {
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HERO SECTION */}
       <section className="relative min-h-[75vh] flex items-end">
         <div className="absolute inset-0">
@@ -150,6 +150,6 @@ export default function WellnessIndustryPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

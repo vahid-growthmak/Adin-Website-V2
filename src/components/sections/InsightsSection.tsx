@@ -18,7 +18,11 @@ export function InsightsSection() {
   useStickyInternalScroll(sectionRef, innerRef)
 
   return (
-    <section id="insights" ref={sectionRef} className="bg-white overflow-hidden">
+    <section
+      id="insights"
+      ref={sectionRef}
+      className="relative bg-white overflow-hidden"
+    >
       <div ref={innerRef} className="py-32 md:py-48 px-6 md:px-12 lg:px-16">
         <div className="max-w-screen-2xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-24">
@@ -46,6 +50,7 @@ export function InsightsSection() {
                       src={article.image}
                       alt={article.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover transition-transform duration-1000 group-hover:scale-105"
                     />
                   </div>

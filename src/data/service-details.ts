@@ -34,8 +34,8 @@ export interface ServiceDetail {
 export const serviceDetails: Record<string, ServiceDetail> = {
   communications: {
     slug: 'communications',
-    label: 'Communications',
-    title: 'Strategic Communications for Purpose-Driven Brands.',
+    label: 'Strategic Communications',
+    title: 'Strategic Communications for Bold Ideas.',
     description: 'Building credibility, shaping narratives, and driving meaningful media coverage for brands that matter.',
     heroImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2400&auto=format&fit=crop',
     approach: {
@@ -108,8 +108,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
   experiences: {
     slug: 'experiences',
-    label: 'Experiences',
-    title: 'Creating Moments That Move People.',
+    label: 'Brand Experiences',
+    title: 'Impactful Brand Experiences.',
     description: 'From intimate brand activations to large-scale events, we craft experiences that leave lasting impressions and build communities around the brands we believe in.',
     heroImage: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2400&auto=format&fit=crop',
     approach: {
@@ -168,10 +168,10 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       'https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=800&auto=format&fit=crop'
     ]
   },
-  'content-creation': {
-    slug: 'content-creation',
-    label: 'Content Creation',
-    title: 'Visual Stories That Command Attention.',
+  'content-narrative': {
+    slug: 'content-narrative',
+    label: 'Content Narrative',
+    title: 'Compelling Content Narratives.',
     description: 'We bridge the gap between high-level strategy and beautiful execution, creating content that lives at the heart of your brand narrative.',
     heroImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2400&auto=format&fit=crop',
     approach: {
@@ -228,8 +228,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
   advisory: {
     slug: 'advisory',
-    label: 'Advisory',
-    title: 'Strategic Guidance for Modern Founders.',
+    label: 'Strategic Brand Advisory',
+    title: 'Strategic Brand Advisory.',
     description: 'High-level counsel for brands navigating complexity, scaling fast, and building a purpose-driven future.',
     heroImage: 'https://images.unsplash.com/photo-1454165833767-0230230238e8?q=80&w=2400&auto=format&fit=crop',
     approach: {

@@ -6,6 +6,8 @@ import { DisplayHeading } from '@/components/ui/DisplayHeading'
 import { Button } from '@/components/ui/Button'
 import { useState } from 'react'
 
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -16,12 +18,23 @@ export default function ContactPage() {
     referral: '',
     message: ''
   })
+  const [status, setStatus] = useState<FormStatus>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission logic here
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message. We will get back to you soon!')
+    setStatus('submitting')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      if (!res.ok) throw new Error(`status ${res.status}`)
+      setStatus('success')
+      setFormData({ firstName: '', lastName: '', email: '', company: '', interest: '', referral: '', message: '' })
+    } catch {
+      setStatus('error')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -30,7 +43,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* PAGE HEADER */}
       <section className="pt-40 pb-20 px-6 md:px-12 lg:px-16">
         <div className="max-w-7xl mx-auto">
@@ -148,9 +161,20 @@ export default function ContactPage() {
                 
                 <div className="pt-4">
                   <Button type="submit" className="w-full py-6 flex justify-center">
-                    Send Message →
+                    {status === 'submitting' ? 'Sending…' : 'Send Message →'}
                   </Button>
                 </div>
+
+                {status === 'success' && (
+                  <p role="status" className="text-adin-green text-sm">
+                    Thanks — we&apos;ll be in touch shortly.
+                  </p>
+                )}
+                {status === 'error' && (
+                  <p role="alert" className="text-red-400 text-sm">
+                    Something went wrong. Please try again or email us directly.
+                  </p>
+                )}
               </form>
             </Reveal>
           </div>
@@ -222,6 +246,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

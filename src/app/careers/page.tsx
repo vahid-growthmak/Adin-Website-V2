@@ -107,7 +107,7 @@ function FAQItem({ question, answer }: { question: string, answer: string }) {
 
 export default function CareersPage() {
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* PAGE HERO */}
       <section className="relative min-h-[65vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
@@ -262,6 +262,6 @@ export default function CareersPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

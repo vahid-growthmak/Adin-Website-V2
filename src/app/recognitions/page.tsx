@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/Button'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const awards = [
   { title: 'PR Week Top 50 Firms', year: '2024', category: 'Industry Ranking' },
@@ -48,7 +47,7 @@ export default function RecognitionsPage() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"])
 
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HERO SECTION */}
       <section ref={containerRef} className="relative min-h-[70vh] flex items-end overflow-hidden">
         <motion.div style={{ y }} className="absolute inset-0 scale-110">
@@ -185,6 +184,6 @@ export default function RecognitionsPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

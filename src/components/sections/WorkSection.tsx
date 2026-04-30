@@ -16,21 +16,25 @@ export function WorkSection() {
   useStickyInternalScroll(sectionRef, innerRef)
 
   return (
-    <section id="work" ref={sectionRef} className="bg-adin-black overflow-hidden">
+    <section
+      id="work"
+      ref={sectionRef}
+      className="relative bg-adin-black overflow-hidden"
+    >
       <div ref={innerRef} className="py-32 md:py-48 px-6 md:px-12 lg:px-16">
         <div className="max-w-screen-2xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
             <div className="max-w-2xl">
               <Reveal>
-                <SectionLabel className="mb-6">Featured Work</SectionLabel>
+                <SectionLabel className="mb-6">Our Work in Action</SectionLabel>
               </Reveal>
               <DisplayHeading className="text-white text-[clamp(48px,7vw,100px)] leading-[0.95]">
-                Case Studies<span className="text-adin-green">.</span>
+                Our Portfolio<span className="text-adin-green">.</span>
               </DisplayHeading>
             </div>
             <Reveal delay={0.4}>
               <p className="font-body text-white/40 max-w-xs text-lg leading-relaxed">
-                Thoughtful storytelling and strategic communications that drive measurable results.
+                From integrated campaigns to multi-channel initiatives, ADin delivers work that engages audiences, strengthens positioning, and creates meaningful business impact.
               </p>
             </Reveal>
           </div>
@@ -91,11 +95,12 @@ function WorkCard({
 }) {
   return (
     <Reveal className={cn('relative group overflow-hidden', className)}>
-      <Link href={href} className="block w-full h-full cursor-none">
+      <Link href={href} className="block relative w-full h-full cursor-none">
         <Image
           src={image}
           alt={title}
           fill
+          sizes={horizontal ? '100vw' : '(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 600px'}
           className="object-cover transition-transform duration-1000 group-hover:scale-105"
         />
         <div className={cn(

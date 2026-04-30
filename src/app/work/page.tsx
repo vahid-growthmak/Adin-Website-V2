@@ -38,7 +38,7 @@ export default function WorkPage() {
   }, [activeService, activeIndustry])
 
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HERO SECTION */}
       <section className="px-6 md:px-12 lg:px-16 pt-40 pb-20 md:pt-48 md:pb-24 flex flex-col justify-center min-h-[50vh]">
         <div className="max-w-7xl mx-auto w-full text-center">
@@ -202,6 +202,6 @@ export default function WorkPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

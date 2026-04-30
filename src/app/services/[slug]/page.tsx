@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
 import { serviceDetails } from '@/data/service-details'
-import { PageHero } from '@/components/ui/PageHero'
 import { Reveal } from '@/components/ui/Reveal'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { Button } from '@/components/ui/Button'

@@ -27,7 +27,7 @@ export default function TermsOfUsePage() {
   }
 
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* PAGE HEADER */}
       <section className="pt-40 pb-16 px-6 md:px-12 lg:px-16 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
@@ -131,6 +131,6 @@ export default function TermsOfUsePage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

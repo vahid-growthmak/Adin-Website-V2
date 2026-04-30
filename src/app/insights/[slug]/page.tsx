@@ -1,20 +1,37 @@
-'use client'
-
 import { Reveal } from '@/components/ui/Reveal'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { DisplayHeading } from '@/components/ui/DisplayHeading'
-import { Button } from '@/components/ui/Button'
 import { articles } from '@/data/insights'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { use, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import type { Metadata } from 'next'
+import { ArticleFAQ } from './ArticleFAQ'
+import { NewsletterForm } from './NewsletterForm'
 
-export default function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params)
+export function generateStaticParams() {
+  return articles.map(a => ({ slug: a.slug }))
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
   const article = articles.find(a => a.slug === slug)
-  const [isOpen, setIsOpen] = useState<number | null>(null)
+  if (!article) return {}
+  return {
+    title: article.title,
+    description: article.excerpt,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      images: article.image ? [article.image] : undefined,
+      type: 'article',
+    },
+  }
+}
+
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const article = articles.find(a => a.slug === slug)
 
   if (!article) {
     notFound()
@@ -23,7 +40,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
   const related = articles.filter(a => a.slug !== slug).slice(0, 3)
 
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HEADER SECTION */}
       <section className="relative min-h-screen flex items-end overflow-hidden pt-40 pb-20">
         <div className="absolute inset-0">
@@ -163,42 +180,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
                 Questions on This Topic.
               </DisplayHeading>
               
-              <div className="space-y-0">
-                {article.faqs.map((faq, i) => (
-                  <div key={i} className="border-b border-white/10">
-                    <button 
-                      onClick={() => setIsOpen(isOpen === i ? null : i)}
-                      className="w-full py-8 flex justify-between items-center text-left group"
-                    >
-                      <span className="text-white font-heading font-black text-xl group-hover:text-adin-green transition-colors pr-8">
-                        {faq.question}
-                      </span>
-                      <motion.span 
-                        animate={{ rotate: isOpen === i ? 45 : 0 }}
-                        className="text-adin-green flex-shrink-0"
-                      >
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M10 4v12M4 10h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </motion.span>
-                    </button>
-                    <AnimatePresence>
-                      {isOpen === i && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          className="overflow-hidden"
-                        >
-                          <p className="pb-8 text-white/50 text-lg leading-relaxed max-w-2xl">
-                            {faq.answer}
-                          </p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ))}
-              </div>
+              <ArticleFAQ faqs={article.faqs} />
             </Reveal>
           </div>
         </section>
@@ -218,21 +200,12 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
               </p>
             </Reveal>
             <Reveal delay={0.2}>
-              <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-6">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="flex-1 bg-white/10 border-b border-white/40 py-4 text-white outline-none focus:border-white transition-colors placeholder:text-white/40"
-                />
-                <button className="px-12 py-4 bg-white text-adin-green font-bold uppercase tracking-widest text-[11px] hover:bg-adin-black hover:text-white transition-all">
-                  Subscribe
-                </button>
-              </form>
+              <NewsletterForm />
               <p className="text-white/20 text-[10px] uppercase tracking-widest font-bold mt-6">No spam. Unsubscribe anytime.</p>
             </Reveal>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

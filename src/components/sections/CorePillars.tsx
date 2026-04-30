@@ -6,7 +6,7 @@ import { SectionLabel } from '../ui/SectionLabel'
 const pillars = [
   {
     title: 'Strategic Storytelling',
-    description: 'We uncover the authentic narrative at the heart of your brand and craft stories that resonate with media, consumers, and communities. Every word we put into the world is intentional and strategic.',
+    description: 'We shape clear, authentic brand stories that connect with audiences and reflect your purpose. Every message is thoughtful, relevant, and aligned with your long-term vision.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#0F5E4E" strokeWidth="1.5" strokeLinejoin="round" />
@@ -15,7 +15,7 @@ const pillars = [
   },
   {
     title: 'Relationship Building',
-    description: 'Two decades of cultivated media relationships across every major vertical means your story reaches the right outlets at the right time. We don\'t cold pitch — we call our contacts.',
+    description: 'Strong, trusted media relationships help your brand reach the right audience at the right time. We focus on meaningful connections that lead to consistent visibility.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3" stroke="#0F5E4E" strokeWidth="1.5" strokeLinecap="round" />
@@ -26,7 +26,7 @@ const pillars = [
   },
   {
     title: 'Results Measurement',
-    description: 'Every campaign is tracked against clear KPIs. We deliver transparent reporting and continuously optimize for maximum impact — because strategy without accountability isn\'t strategy at all.',
+    description: 'We track performance through clear metrics, providing transparent insights and continuous improvements to ensure your communications deliver real, measurable impact.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <polyline points="3 13 7 9 10 12 14 7 17 10" stroke="#0F5E4E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

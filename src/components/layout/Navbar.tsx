@@ -24,7 +24,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-[100] transition-all duration-500 px-6 md:px-12 lg:px-16',
+        'fixed top-0 left-0 right-0 z-[2000] transition-all duration-500 px-6 md:px-12 lg:px-16',
         scrolled ? 'bg-adin-black/90 backdrop-blur-md py-4 border-b border-white/5' : 'bg-transparent py-8'
       )}
     >
@@ -50,7 +50,7 @@ export function Navbar() {
           <Button href="/contact" variant="primary" className="px-6 py-3">
             Contact Us
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="ml-2">
-              <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </Button>
         </div>
@@ -69,7 +69,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'fixed inset-0 bg-adin-black z-[110] flex flex-col p-12 transition-all duration-700 ease-in-out',
+          'fixed inset-0 bg-adin-black z-[2100] flex flex-col p-12 transition-all duration-700 ease-in-out',
           mobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'
         )}
       >

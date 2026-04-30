@@ -5,44 +5,43 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { DisplayHeading } from '@/components/ui/DisplayHeading'
 import { Button } from '@/components/ui/Button'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const disciplines = [
   {
     num: '01',
     title: 'Copywriting',
-    text: 'Words that work. We develop editorial content, web copy, product descriptions, brand manifestos, and email campaigns — all in your brand&apos;s unique voice.',
-    tags: ['Editorial', 'Web Copy', 'Social']
+    text: 'We create clear, engaging content including website copy, social posts, product descriptions, and long-form articles, all written in your brand’s voice.',
+    tags: ['Editorial Content', 'Website Copy', 'Social Copy']
   },
   {
     num: '02',
     title: 'Visual Production',
-    text: 'Photography direction and video production that elevates your brand aesthetics. From intimate product shoots to full-scale brand films.',
-    tags: ['Photo Direction', 'Video', 'Brand Films']
+    text: 'ADin produces photography and video content that strengthens your brand identity, from product shoots to brand films designed for digital platforms.',
+    tags: ['Photo Direction', 'Video Production', 'Brand Films']
   },
   {
     num: '03',
     title: 'Social Content',
-    text: 'Platform-native content strategy for Instagram, TikTok, and LinkedIn. We develop content calendars, creative concepts, and produced assets.',
-    tags: ['Strategy', 'Creation', 'Reels & TikTok']
+    text: 'We plan and create platform-ready content for Instagram, TikTok, LinkedIn, and more, helping your brand stay relevant and consistently engage your audience.',
+    tags: ['Content Strategy', 'Content Creation', 'Short-Form Video']
   },
   {
     num: '04',
     title: 'Campaign Content',
-    text: 'Integrated multi-channel campaigns built around a single strategic idea — deployed across paid, earned, owned, and social channels.',
-    tags: ['Multi-Channel', 'Strategy', 'Launch']
+    text: 'We develop integrated content campaigns built around strong ideas, delivered across digital channels to increase reach, engagement, and consistent brand messaging.',
+    tags: ['Multi-Channel Campaigns', 'Campaign Strategy', 'Launch Execution']
   }
 ]
 
-export default function ContentCreationPage() {
+export default function ContentNarrativePage() {
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HERO SECTION */}
       <section className="relative min-h-[75vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image 
             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2400&auto=format&fit=crop" 
-            alt="Content Creation" 
+            alt="Content Narrative" 
             fill 
             className="object-cover opacity-60"
             priority
@@ -53,10 +52,10 @@ export default function ContentCreationPage() {
           <Reveal>
             <SectionLabel className="mb-6">Content Creation</SectionLabel>
             <DisplayHeading className="text-white max-w-4xl mb-8 text-4xl md:text-6xl lg:text-7xl xl:text-8xl">
-              Content That Captures Culture.
+              Content That Brings Brands to Life
             </DisplayHeading>
             <p className="text-white/60 max-w-2xl text-xl leading-relaxed">
-              From compelling copy to striking visuals, we craft content that resonates with modern audiences and drives real engagement.
+              We produce clear, engaging content that helps your brand stand out, connect with audiences, and maintain a strong presence across platforms.
             </p>
           </Reveal>
         </div>
@@ -78,16 +77,25 @@ export default function ContentCreationPage() {
             <Reveal delay={0.2}>
               <SectionLabel className="mb-8">Our Expertise</SectionLabel>
               <DisplayHeading className="text-white mb-10 text-4xl md:text-5xl lg:text-6xl leading-tight">
-                Multimedia Content for Purpose-Driven Brands.
+                Strategic Content Creation for Modern Brands
               </DisplayHeading>
               <p className="text-white/50 text-xl leading-relaxed mb-12">
-                Great content doesn&apos;t just look good — it works. We blend editorial intelligence with cultural instinct to produce content that is deeply tailored to your brand mission.
+                Great content is more than just visuals, it should connect and make an impact. At ADin, we create video, photography, and written content that reflects your brand and speaks to your audience. Everything we produce is designed to grab attention, keep people engaged, and build a strong, consistent presence across digital platforms.
               </p>
               <div className="space-y-10">
                 {[
-                  { title: 'Video Production', text: 'Brand films, social reels, and founder stories with cinematic quality.' },
-                  { title: 'Photography Direction', text: 'Art-directed shoots that build cohesive, recognizable visual libraries.' },
-                  { title: 'Brand Copywriting', text: 'Writing in your brand&apos;s voice — with precision, personality, and purpose.' }
+                  { 
+                    title: 'Video Production', 
+                    text: 'We create brand videos, social media reels, founder stories, and documentary-style content that communicate your message clearly while driving engagement and emotional connection with your audience.' 
+                  },
+                  { 
+                    title: 'Photography Direction', 
+                    text: 'Our team develops art-directed photo shoots that build strong visual identity, including product, lifestyle, and editorial imagery that keeps your brand consistent and recognizable.' 
+                  },
+                  { 
+                    title: 'Brand Copywriting', 
+                    text: 'We craft website content, social copy, and long-form editorial that reflects your brand voice, connects with your audience, and supports clear, effective communication.' 
+                  }
                 ].map((item) => (
                   <div key={item.title} className="flex gap-6">
                     <span className="w-2 h-2 rounded-full bg-adin-green mt-3 flex-shrink-0" />
@@ -136,6 +144,27 @@ export default function ContentCreationPage() {
         </div>
       </section>
 
+      {/* CLIENT EXPERIENCES */}
+      <section className="bg-adin-black py-32 px-6 md:px-12 lg:px-16 border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <Reveal className="mb-20">
+            <SectionLabel className="mb-4 text-adin-green">Client Experiences</SectionLabel>
+            <DisplayHeading className="text-white text-3xl sm:text-4xl md:text-5xl">Real Stories From Our Clients.</DisplayHeading>
+          </Reveal>
+          <div className="max-w-4xl border-t border-white/10 pt-12">
+            <Reveal>
+              <p className="text-white/70 italic text-xl md:text-2xl leading-relaxed mb-10">
+                &quot;The content ADin created for us didn’t just look good—it actually worked. Within the first month, our organic reach grew significantly, and the brand voice they developed still shapes everything we publish today.&quot;
+              </p>
+              <div>
+                <p className="text-white font-heading font-bold text-sm uppercase tracking-tight">Amanda Chen</p>
+                <p className="text-white/30 text-[10px] font-bold uppercase tracking-widest mt-1">Founder, Wellness Brand Partner</p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* GALLERY GRID */}
       <section className="bg-adin-black py-32 px-6 md:px-12 lg:px-16 border-t border-white/5">
         <div className="max-w-7xl mx-auto">
@@ -171,10 +200,10 @@ export default function ContentCreationPage() {
           <Reveal>
             <SectionLabel className="mb-8 justify-center">Ready to Begin</SectionLabel>
             <DisplayHeading className="text-white mb-10 text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-none">
-              Let&apos;s Tell Your Brand Story.
+              Let’s Shape Your Brand Story
             </DisplayHeading>
             <p className="text-white/40 text-xl leading-relaxed mb-16 max-w-xl mx-auto">
-              Content is how your brand shows up every single day. Let&apos;s make sure it&apos;s saying exactly the right thing.
+              Your content represents your brand every day. At ADin, we make sure it speaks clearly, connects with your audience, and reflects who you are.
             </p>
             <Button href="/contact" className="px-12 py-8 mx-auto">
               Start a Conversation →
@@ -182,6 +211,6 @@ export default function ContentCreationPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

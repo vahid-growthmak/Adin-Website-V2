@@ -7,39 +7,38 @@ import { Button } from '@/components/ui/Button'
 import { CorePillars } from '@/components/sections/CorePillars'
 import { TwoTestimonialsSection } from '@/components/sections/TwoTestimonialsSection'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const steps = [
   {
     num: '01',
     title: 'Discovery',
-    text: 'We immerse ourselves in your brand, category, and competitive landscape. We listen before we speak. This phase includes stakeholder interviews, media audits, competitive analysis, and a thorough review of your current brand positioning.'
+    text: 'We take time to understand your brand, audience, and market. ADin uses research and conversations to build a clear foundation that guides strategy and aligns every decision with your goals.'
   },
   {
     num: '02',
     title: 'Strategy',
-    text: 'We develop a comprehensive communications plan with clear objectives, target audiences, and message architecture. Every strategy is bespoke — built around your unique story, your specific goals, and the media landscape.'
+    text: 'A focused communications plan is developed with clear objectives, defined audiences, and strong messaging. ADin ensures every strategy is tailored to your brand and supports visibility, growth, and long term success.'
   },
   {
     num: '03',
     title: 'Execution',
-    text: 'Our team activates across media, events, and content channels with precision and creative excellence. We manage every touchpoint — from press outreach and event production to content creation.'
+    text: 'We bring strategy to life across media, content, and experiences. ADin ensures every touchpoint is consistent, clear, and engaging, helping your brand communicate effectively and connect with the right audience.'
   },
   {
     num: '04',
     title: 'Measurement',
-    text: 'We track every placement, impression, and outcome against your goals, reporting transparently throughout. Monthly performance reviews keep you informed and our team accountable.'
+    text: 'Performance is tracked against clear goals, with regular updates and insights. ADin focuses on understanding what works, identifying improvements, and ensuring your brand continues to grow with measurable progress.'
   },
   {
     num: '05',
     title: 'Optimization',
-    text: 'We continuously refine our approach based on performance data and evolving market conditions. Great communications is not static — we iterate, test, and adapt to keep your narrative resonant.'
+    text: 'We refine strategies based on performance and changing market conditions. ADin continuously improves communication efforts to keep your brand relevant, effective, and aligned with long term growth and audience expectations.'
   }
 ]
 
 export default function OurApproachPage() {
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HERO SECTION */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
@@ -56,10 +55,10 @@ export default function OurApproachPage() {
           <Reveal>
             <SectionLabel className="mb-6">Our Methodology</SectionLabel>
             <DisplayHeading className="text-white max-w-4xl mb-8 text-4xl md:text-6xl lg:text-7xl xl:text-8xl">
-              Strategic. Intentional.<br />Results-Driven.
+              Strategic Approach to Brand Building
             </DisplayHeading>
             <p className="text-white/60 max-w-xl text-xl leading-relaxed">
-              Our founder-focused approach combines strategic storytelling with measurable results.
+              Our founder-focused approach combines strategy, storytelling, and execution to help brands grow with clarity and measurable results.
             </p>
           </Reveal>
         </div>
@@ -79,13 +78,14 @@ export default function OurApproachPage() {
               <div className="absolute inset-0 border border-white/10 m-8" />
             </Reveal>
             <Reveal delay={0.2}>
-              <SectionLabel className="mb-8">The ADIN Difference</SectionLabel>
+              <SectionLabel className="mb-8">THE ADIN DIFFERENCE</SectionLabel>
               <DisplayHeading className="text-white mb-10 text-4xl md:text-6xl lg:text-7xl leading-tight">
-                Not a Campaign.<br />An Architecture.
+                Beyond Campaigns. Built for Long-Term Growth.
               </DisplayHeading>
               <div className="space-y-6 text-white/50 text-xl leading-relaxed mb-12">
-                <p>At ADIN, we don&apos;t just execute PR campaigns — we build communications architectures that define how your brand speaks to the world. Our approach is built on deep listening, strategic positioning, and relentless follow-through.</p>
-                <p>We begin every engagement by immersing ourselves in your world — your category, your competition, your customer, and your aspirations. Only then do we craft strategies that are bespoke to you and built for the long term.</p>
+                <p>At ADin, we go beyond executing PR campaigns. We build communications systems that shape how your brand connects with the world. Our approach is grounded in careful listening, clear strategy, and consistent execution from start to finish.</p>
+                <p>We begin every engagement by understanding your business, your market, your audience, and your goals. Only then do we develop strategies that are tailored to your brand and designed for long term growth.</p>
+                <p>The result is communication that feels natural and impactful. Stories are thoughtfully crafted and well placed to build credibility, strengthen connections, and deliver real business results.</p>
               </div>
               <Button href="/contact" className="px-10 py-8">
                 Work With Us →
@@ -102,9 +102,9 @@ export default function OurApproachPage() {
       <section className="bg-white py-32 px-6 md:px-12 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <Reveal>
-            <SectionLabel className="mb-6 text-adin-green">The Process</SectionLabel>
+            <SectionLabel className="mb-6 text-adin-green">Our Process</SectionLabel>
             <DisplayHeading className="text-adin-black mb-24 text-4xl md:text-6xl">
-              The Client Journey.
+              From Insight to Impact
             </DisplayHeading>
           </Reveal>
 
@@ -150,12 +150,12 @@ export default function OurApproachPage() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <Reveal>
-            <SectionLabel className="mb-8 justify-center">Get Started</SectionLabel>
+            <SectionLabel className="mb-8 justify-center">GET STARTED</SectionLabel>
             <DisplayHeading className="text-white mb-10 text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-none">
-              Let&apos;s Build Something Together.
+              Ready to Grow Your Brand?
             </DisplayHeading>
             <p className="text-white/50 text-xl leading-relaxed mb-16 max-w-xl mx-auto">
-              Ready to bring your brand story to the world? Let&apos;s start with a conversation.
+              Connect with our team to create a communication strategy that helps your brand stand out and grow.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button href="/contact" className="px-12 py-8 justify-center">
@@ -168,6 +168,6 @@ export default function OurApproachPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

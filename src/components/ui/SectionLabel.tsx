@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 interface SectionLabelProps {
@@ -5,8 +6,6 @@ interface SectionLabelProps {
   className?: string
   light?: boolean
 }
-
-import { ReactNode } from 'react'
 
 export function SectionLabel({ children, className, light = false }: SectionLabelProps) {
   return (

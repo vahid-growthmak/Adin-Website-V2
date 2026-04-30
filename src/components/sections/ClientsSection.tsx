@@ -15,7 +15,11 @@ export function ClientsSection() {
   useStickyInternalScroll(sectionRef, innerRef)
 
   return (
-    <section id="clients" ref={sectionRef} className="bg-adin-light overflow-hidden">
+    <section
+      id="clients"
+      ref={sectionRef}
+      className="relative bg-adin-light overflow-hidden"
+    >
       <div ref={innerRef} className="py-32 md:py-48 px-6 md:px-12 lg:px-16">
         <div className="max-w-screen-2xl mx-auto">
           <div className="max-w-3xl mb-24">
@@ -23,12 +27,17 @@ export function ClientsSection() {
               <SectionLabel light className="mb-8">Our Clients</SectionLabel>
             </Reveal>
             <DisplayHeading className="text-adin-black text-[clamp(40px,6vw,88px)] leading-[0.95] mb-10">
-              Trusted by Visionary Brands<span className="text-adin-green">.</span>
+              Brands We’re Proud to Partner With<span className="text-adin-green">.</span>
             </DisplayHeading>
             <Reveal delay={0.4}>
-              <p className="font-body text-neutral-500 text-xl leading-relaxed">
-                The brands we represent are companies whose products we proudly use ourselves. They are among the most respected for their integrity, innovation, and commitment to purpose.
-              </p>
+              <div className="space-y-6">
+                <p className="font-body text-neutral-500 text-xl leading-relaxed">
+                  ADin collaborates with organizations driven by purpose, innovation, and a commitment to doing things differently in evolving and competitive markets.
+                </p>
+                <p className="font-body text-neutral-500 text-lg leading-relaxed">
+                  From emerging companies to established leaders, our clients are recognized for integrity, influence, and lasting impact across industries.
+                </p>
+              </div>
             </Reveal>
           </div>
 
@@ -41,6 +50,7 @@ export function ClientsSection() {
                       src={client.logo}
                       alt={client.name}
                       fill
+                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-contain transition-all duration-500"
                     />
                   </div>

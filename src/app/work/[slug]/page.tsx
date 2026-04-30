@@ -1,5 +1,3 @@
-'use client'
-
 import { Reveal } from '@/components/ui/Reveal'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { DisplayHeading } from '@/components/ui/DisplayHeading'
@@ -8,10 +6,29 @@ import { work } from '@/data/work'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { use } from 'react'
+import type { Metadata } from 'next'
 
-export default function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params)
+export function generateStaticParams() {
+  return work.map(p => ({ slug: p.slug }))
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const project = work.find(p => p.slug === slug)
+  if (!project) return {}
+  return {
+    title: project.title,
+    description: project.label,
+    openGraph: {
+      title: project.title,
+      description: project.label,
+      images: project.heroImage ? [project.heroImage] : undefined,
+    },
+  }
+}
+
+export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   const project = work.find(p => p.slug === slug)
 
   if (!project) {
@@ -19,7 +36,7 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
   }
 
   return (
-    <main className="bg-adin-black min-h-screen">
+    <div className="bg-adin-black min-h-screen">
       {/* HERO SECTION */}
       <section className="relative min-h-[90vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
@@ -179,6 +196,6 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

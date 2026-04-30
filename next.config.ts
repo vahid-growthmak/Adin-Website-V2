@@ -3,10 +3,9 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
+      { protocol: 'https', hostname: 'images.unsplash.com' },
+      { protocol: 'https', hostname: 'adinnyc.com' },
+      { protocol: 'https', hostname: 'adin-nyc.com' },
     ],
   },
   async redirects() {
