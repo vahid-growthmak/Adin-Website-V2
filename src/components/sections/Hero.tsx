@@ -13,43 +13,58 @@ export function Hero() {
   const contentRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
-    // Cinematic entrance
+    // Cinematic entrance — runs once on mount.
     gsap.fromTo(
       bgRef.current,
-      { scale: 1.15 },
-      { scale: 1, duration: 2.8, ease: 'power2.out' }
+      { scale: 1.15, force3D: true },
+      { scale: 1, duration: 2.8, ease: 'power2.out', force3D: true },
     )
 
     const tl = gsap.timeline({ delay: 0.3 })
     tl.fromTo(
       '.hero-reveal',
-      { y: 60, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.2, stagger: 0.2, ease: 'power3.out' }
+      { y: 60, opacity: 0, force3D: true },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        stagger: 0.2,
+        ease: 'power3.out',
+        force3D: true,
+        // Drop the inline transform once the entrance is done so the
+        // text renders crisply when the scroll-driven parent transform
+        // composes with it later.
+        clearProps: 'transform,willChange',
+      },
     )
 
-    // Scroll parallax
+    // Background parallax — image element only, so glyph scaling can't
+    // jitter the headline.
     gsap.to(bgRef.current, {
       yPercent: -15,
-      scale: 1.1,
       ease: 'none',
+      force3D: true,
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top top',
         end: 'bottom top',
-        scrub: true,
+        scrub: 0.5,
       },
     })
 
+    // Foreground fade — opacity + y only. Scaling text on scroll forces
+    // the browser to re-rasterize glyphs every frame, which reads as
+    // shaking on the headline.
     gsap.to(contentRef.current, {
       opacity: 0,
       y: -80,
-      scale: 0.96,
       ease: 'none',
+      force3D: true,
       scrollTrigger: {
         trigger: containerRef.current,
         start: '20% top',
         end: '70% top',
-        scrub: true,
+        scrub: 0.5,
       },
     })
   }, { scope: containerRef })
