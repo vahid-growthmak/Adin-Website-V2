@@ -3,30 +3,33 @@
 import { gsap, useGSAP, ScrollTrigger } from '@/lib/gsap'
 
 /**
- * Drives the homepage's "stacked sections" effect.
+ * Drives the homepage's "stack at the bottom" effect.
  *
- * Pins every section that fits in one viewport (`section.offsetHeight <=
- * window.innerHeight + a small slack`) using
- * `ScrollTrigger.pin({ pinSpacing: false })`. The next section, which
- * lives at its natural document position because pinSpacing is off,
- * rises up over the pinned one and pins in turn when its own top reaches
- * the viewport top.
+ * Each section pins at the moment its bottom edge reaches the viewport's
+ * bottom edge — i.e. as soon as the user has scrolled all the way through
+ * the section. The pin holds for one viewport-height of scroll while the
+ * next section rises up from below over it, then releases as the next
+ * section pins in turn. Translated to ScrollTrigger:
  *
- * Tall sections (Services, Work, Clients) are intentionally NOT pinned.
- * Pinning them would either:
- *   1. Hide the bottom of their content under the section's
- *      `overflow: hidden` for the entire pin duration, or
- *   2. (with a viewport-capped pin) compress the rest of their content
- *      into a brief unpinned window, *and* break every `Reveal`-wrapped
- *      element inside them — Reveal's own ScrollTrigger never fires
- *      because the trigger element stops moving relative to the viewport
- *      while its parent is pinned.
- * Tall sections instead scroll naturally and provide the rise-over
- * effect for the section pinned above them.
+ *   start: 'bottom bottom'  → pin when section.bottom hits viewport.bottom
+ *   end:   'bottom top'     → unpin when section.bottom hits viewport.top
  *
- * `anticipatePin: 1` smooths the start of each pin by pre-applying the
- * fixed positioning a frame early, removing the brief jitter you'd
- * otherwise see at the moment of pin engagement.
+ * Pin duration is always exactly one viewport height, regardless of
+ * section height. Tall sections (Services ~2800, Work ~1500, Clients
+ * ~1500, About ~1000) are scrolled through naturally first — every row
+ * of their content gets a normal scroll pass — and then the pin engages
+ * only at the end. Short sections (Hero, Philosophy, Advisory, etc.) pin
+ * the moment they're fully in view.
+ *
+ * `pinSpacing: false` lets the next section, at its natural document
+ * position, rise up over the pinned one.
+ *
+ * `pinType: 'transform'` avoids the pin-spacer wrapper that the default
+ * `'fixed'` mode adds, which conflicted with React's reconciler on
+ * route changes (the "removeChild on Node" error).
+ *
+ * `anticipatePin: 1` pre-applies the pin one frame early so engagement
+ * is jitter-free.
  */
 export function HomepageStacking() {
   useGSAP(() => {
@@ -34,37 +37,37 @@ export function HomepageStacking() {
 
     mm.add(
       {
-        // Pin only on viewports tall enough to make stacking feel right.
-        isWide: '(min-width: 768px) and (min-height: 600px)',
+        canStack: '(min-height: 480px)',
         reduceMotion: '(prefers-reduced-motion: reduce)',
       },
       (context) => {
-        const { isWide, reduceMotion } = context.conditions!
-        if (!isWide || reduceMotion) return
+        const { canStack, reduceMotion } = context.conditions!
+        if (!canStack || reduceMotion) return
+
+        // Round scroll position to integer pixels and lock updates to
+        // the rAF paint cycle. Without this, ScrollTrigger's pin
+        // transform lands on fractional Y values during inertial /
+        // momentum scroll, which forces the browser to re-rasterize the
+        // pinned section's text glyphs every frame — visible as
+        // vibration on mobile and tablet (where SmoothScroll's
+        // smoothTouch is 0 and never normalizes touch scroll).
+        // Calling it here is idempotent on desktop where ScrollSmoother
+        // already enables it.
+        ScrollTrigger.normalizeScroll(true)
 
         const sections = gsap.utils.toArray<HTMLElement>('main > section')
-        // Allow a small slack so a section a few px taller than the
-        // viewport (typical for content with fluid typography) still pins.
-        const pinSlack = 32
 
         sections.forEach((section) => {
+          // Contact must scroll normally so the footer can appear.
           if (section.id === 'contact-section') return
-          if (section.offsetHeight > window.innerHeight + pinSlack) return
 
           ScrollTrigger.create({
             trigger: section,
-            start: 'top top',
-            end: () => `+=${section.offsetHeight}`,
+            start: 'bottom bottom',
+            end: 'bottom top',
             pin: true,
             pinSpacing: false,
             anticipatePin: 1,
-            // `pinType: 'transform'` keeps the pinned element in its
-            // original DOM position and just translates it with scroll —
-            // unlike the default `'fixed'` mode, which wraps the element
-            // in a pin-spacer div. The wrapper conflicts with React's
-            // reconciler on route changes and produces:
-            //   "Failed to execute 'removeChild' on 'Node': The node
-            //    to be removed is not a child of this node."
             pinType: 'transform',
             invalidateOnRefresh: true,
           })

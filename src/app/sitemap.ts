@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/advisory',
     '/services/communications',
     '/services/content-narrative',
+    '/services/digital-enablement',
     '/services/experiences',
     '/our-approach',
     '/work',

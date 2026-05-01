@@ -6,6 +6,7 @@ import { SectionLabel } from '../ui/SectionLabel'
 import { DisplayHeading } from '../ui/DisplayHeading'
 import { StatCounter } from '../ui/StatCounter'
 import { Button } from '../ui/Button'
+import { Marquee } from '../ui/Marquee'
 import { useStickyInternalScroll } from '@/hooks/useStickyInternalScroll'
 import { cn } from '@/lib/utils'
 
@@ -21,6 +22,9 @@ export function AboutSection() {
       ref={sectionRef}
       className="relative bg-adin-black overflow-hidden"
     >
+      {/* Marquee sits at the top edge of About so it reads as the divider
+          between Hero and the rest of the page. */}
+      <Marquee />
       <div ref={innerRef} className="py-24 md:py-40 px-6 md:px-12 lg:px-16 border-t border-white/5">
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
@@ -68,9 +72,9 @@ export function AboutSection() {
 
 function StatBox({ label, value, isAccent = false }: { label: string; value: string; isAccent?: boolean }) {
   return (
-    <div className="bg-adin-black px-8 py-12 hover:bg-white/[0.03] transition-colors group">
+    <div className="bg-adin-black px-5 py-10 sm:px-8 sm:py-12 hover:bg-white/[0.03] transition-colors group">
       <Reveal>
-        <p className={cn('font-heading font-black text-5xl md:text-6xl mb-3', isAccent ? 'text-adin-green' : 'text-white')}>
+        <p className={cn('font-heading font-black text-4xl sm:text-5xl md:text-6xl mb-3 leading-none', isAccent ? 'text-adin-green' : 'text-white')}>
           <StatCounter value={value} />
         </p>
         <p className="text-white/40 uppercase tracking-widest text-[10px] font-bold">

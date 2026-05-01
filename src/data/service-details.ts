@@ -283,5 +283,71 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         initials: 'FC'
       }
     ]
+  },
+  'digital-enablement': {
+    slug: 'digital-enablement',
+    label: 'Digital Enablement',
+    title: 'Digital Enablement, White-Labeled.',
+    description: 'Turnkey websites, content systems, and growth infrastructure — built by ADin, delivered under your brand.',
+    heroImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2400&auto=format&fit=crop',
+    approach: {
+      title: 'Your Brand on the Front. Our Engineering Behind It.',
+      description: "We partner with agencies, holding companies, and in-house teams who need senior digital execution without standing up the practice themselves. Every deliverable ships under your name — the strategy, the build, the ongoing optimization. We stay invisible so your client relationship stays uncomplicated.",
+      image: 'https://images.unsplash.com/photo-1517436026-0c2e6e0c5f0e?q=80&w=2000&auto=format&fit=crop',
+      features: [
+        {
+          title: 'White-Label Delivery',
+          description: 'Every artifact — code, content, decks, dashboards — ships under your branding, with documentation and handoff materials your team can present as their own.'
+        },
+        {
+          title: 'Senior Engineering Bench',
+          description: 'On-demand access to product, design, and engineering capacity that scales with your pipeline, without the cost of a full in-house team.'
+        },
+        {
+          title: 'Operational Discretion',
+          description: "We never client-face unless you invite us in. Status, communication, and credit all flow through your account leads."
+        }
+      ]
+    },
+    services: [
+      {
+        title: 'White-Label Web Development',
+        description: 'Marketing sites, landing pages, and product surfaces built on Next.js, Webflow, and headless CMS platforms — with handoff packages your developers can own end-to-end.'
+      },
+      {
+        title: 'Content Management Systems',
+        description: 'Headless CMS architecture (Sanity, Contentful, Strapi) tuned to your editorial workflows, with author training and governance baked in.'
+      },
+      {
+        title: 'SEO & Performance',
+        description: 'Technical SEO audits, Core Web Vitals tuning, schema markup, and structured-data rollouts that move organic rank and conversion together.'
+      },
+      {
+        title: 'Analytics & Reporting',
+        description: 'GA4, server-side tracking, and dashboards configured for your stack so your account team can present clean numbers without wrangling pipes.'
+      },
+      {
+        title: 'Marketing Automation',
+        description: 'Lifecycle email, lead-routing, and CRM integrations across HubSpot, Klaviyo, Customer.io, and the rest of the modern stack.'
+      },
+      {
+        title: 'Partner Enablement',
+        description: 'Reusable component libraries, brand-themable templates, and SOPs your agency can deploy across multiple clients without duplicate engineering spend.'
+      }
+    ],
+    metrics: [
+      { value: '40+', label: 'Partner Engagements' },
+      { value: '120+', label: 'Sites Shipped' },
+      { value: '99.9%', label: 'Confidentiality' },
+      { value: 'NDA', label: 'Default Posture' }
+    ],
+    testimonials: [
+      {
+        quote: "ADin operates like a senior in-house team that no one else knows exists. We pitch the work, they ship the work, our clients never see the seams.",
+        author: 'Managing Partner',
+        role: 'Agency Partner',
+        initials: 'MP'
+      }
+    ]
   }
 }
