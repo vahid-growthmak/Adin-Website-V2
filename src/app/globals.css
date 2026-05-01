@@ -325,26 +325,18 @@
     width: 100%;
   }
 
-  /* ===== HOMEPAGE SECTION STACKING SYSTEM =====
-     Mirrors the vanilla reference site at
-     /source_extracted/Adin-Website-main/index.html exactly:
+  /* ===== HOMEPAGE PIN-AT-SECTION-BOTTOM STACKING =====
+     Each section uses `position: sticky; bottom: 0` so the BROWSER —
+     not JavaScript — pins it when its bottom edge reaches the viewport
+     bottom. The browser handles the pin natively on the compositor,
+     with no per-frame inline transform on the section, so there's no
+     sub-pixel re-rasterization and no shaking. Tall sections (About,
+     Services, Work, Clients) get a natural-scroll period FIRST showing
+     all of their content, then the sticky engages with the bottom 100vh
+     held at the viewport bottom while the next section rises over.
 
-       main > section:not(#contact-section) {
-         position: sticky;
-         top: 0;
-         min-height: 100vh;
-         will-change: transform;
-       }
-
-     CSS sticky pins natively on the compositor — no per-frame
-     JavaScript transforms means no sub-pixel re-rasterization and no
-     vibration. Each section pins at the moment its top reaches the
-     viewport top; the next section rises up from below over it via
-     paint order (z-index ladder). For sections taller than 100vh,
-     `useStickyInternalScroll` translates an *inner child* (not the
-     section itself) so all of their content stays reachable inside
-     the pinned frame. The transform is on the child, so the section
-     box stays pixel-stable. */
+     `#contact-section` opts out so the footer can appear. Mobile drops
+     sticky entirely; the layout falls back to normal flow. */
   main > section {
     position: relative;
     background-color: var(--adin-black);
@@ -353,9 +345,7 @@
   @media (min-width: 768px) {
     main > section:not(#contact-section) {
       position: sticky;
-      top: 0;
-      min-height: 100vh;
-      will-change: transform;
+      bottom: 0;
     }
   }
 
