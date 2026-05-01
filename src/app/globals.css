@@ -336,12 +336,11 @@
   main > section {
     position: relative;
     background-color: var(--adin-black);
-    /* Promote each homepage section to its own compositor layer so the
-       sub-pixel transform GSAP applies during pin doesn't trigger
-       per-frame glyph re-rasterization (the "vibration" you'd otherwise
-       see on the pinned section while the next one rises over it). */
+    /* Hint the browser that these sections will be transformed (GSAP
+       applies translate3d during pin) so it keeps them on their own
+       compositor layer and doesn't re-rasterize text glyphs at every
+       sub-pixel scroll position. */
     will-change: transform;
-    transform: translateZ(0);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
   }
