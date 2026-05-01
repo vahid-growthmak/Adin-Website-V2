@@ -336,11 +336,16 @@
   main > section {
     position: relative;
     background-color: var(--adin-black);
-    /* Hint the browser that these sections will be transformed (GSAP
-       applies translate3d during pin) so it keeps them on their own
-       compositor layer and doesn't re-rasterize text glyphs at every
-       sub-pixel scroll position. */
+    /* Force every section onto its own compositor layer at all times.
+       Without `transform: translateZ(0)`, the browser sometimes waits
+       for an actual transform to materialize before promoting — and on
+       the first frame GSAP pins, there's a hand-off window where the
+       section is being transformed but isn't yet on its own layer.
+       That single frame is enough for the browser to re-rasterize the
+       section's text at the new sub-pixel position, which reads as
+       vibration. Forcing the layer up-front eliminates the hand-off. */
     will-change: transform;
+    transform: translateZ(0);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
   }
