@@ -10,7 +10,7 @@ export function ArchitectureSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop"
+          src="/images/advisory-bg.jpg"
           alt="Strategic Brand Advisory"
           fill
           sizes="100vw"
