@@ -20,6 +20,7 @@ export function WorkSection() {
     <section
       id="work"
       ref={sectionRef}
+      data-flow="normal"
       className="relative bg-adin-black overflow-hidden"
     >
       <div ref={innerRef} className="py-32 md:py-48 px-6 md:px-12 lg:px-16">

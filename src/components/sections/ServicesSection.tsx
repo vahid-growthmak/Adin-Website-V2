@@ -20,6 +20,7 @@ export function ServicesSection() {
     <section
       id="services"
       ref={sectionRef}
+      data-flow="normal"
       className="relative bg-adin-black overflow-hidden"
     >
       <div ref={innerRef} className="flex flex-col">

@@ -18,6 +18,7 @@ export function ClientsSection() {
     <section
       id="clients"
       ref={sectionRef}
+      data-flow="normal"
       className="relative bg-adin-light overflow-hidden"
     >
       <div ref={innerRef} className="py-32 md:py-48 px-6 md:px-12 lg:px-16">

@@ -10,7 +10,6 @@ import { site } from '@/data/site'
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const bgRef = useRef<HTMLDivElement>(null)
-  const contentRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
     // Cinematic entrance — runs once on mount.
@@ -52,21 +51,10 @@ export function Hero() {
       },
     })
 
-    // Foreground fade — opacity + y only. Scaling text on scroll forces
-    // the browser to re-rasterize glyphs every frame, which reads as
-    // shaking on the headline.
-    gsap.to(contentRef.current, {
-      opacity: 0,
-      y: -80,
-      ease: 'none',
-      force3D: true,
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: '20% top',
-        end: '70% top',
-        scrub: 0.5,
-      },
-    })
+    // No foreground content fade-out: Hero is now pinned by
+    // HomepageStacking so About can rise up over it. A second
+    // scroll-driven transform on the headline subtree would compound
+    // with the pin's transform and shake the text.
   }, { scope: containerRef })
 
   return (
@@ -84,7 +72,7 @@ export function Hero() {
           <div className="absolute inset-0 bg-gradient-to-b from-adin-black/40 via-adin-black/20 to-adin-black" />
         </div>
 
-        <div ref={contentRef} className="relative z-10 w-full px-6 md:px-12 lg:px-16">
+        <div className="relative z-10 w-full px-6 md:px-12 lg:px-16">
           <div className="max-w-screen-2xl mx-auto">
             <div className="max-w-4xl">
               <h1 className="hero-reveal font-heading font-black text-white text-[clamp(48px,10vw,120px)] leading-[0.95] tracking-tighter mb-8">
