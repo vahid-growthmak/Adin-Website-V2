@@ -333,46 +333,28 @@
      transitions. Sticky positioning is intentionally NOT used — GSAP
      pin sets `position: fixed` directly and `position: sticky` would
      conflict. */
-  /* ===== HOMEPAGE SECTION STACKING SYSTEM =====
-     Mirrors the vanilla reference site exactly: every section in <main>
-     pins to the top of the viewport via CSS `position: sticky`, with a
-     z-index ladder so later sections paint over earlier pinned ones.
-
-     CSS sticky is what the reference uses, and it's the reason the
-     reference doesn't vibrate during the rise-over moment: the browser
-     keeps the sticky element on a compositor layer and the pin is
-     handled natively, with no per-frame JS-driven transform on the
-     section itself. Tall sections translate their *inner child* via
-     `useStickyInternalScroll` so all of their content stays reachable
-     while the section is stuck at the top — keeping the section box
-     pixel-stable.
-
-     `#contact-section` opts out so the footer can appear. Mobile drops
-     sticky entirely; the layout falls back to plain document flow. */
   main > section {
     position: relative;
     background-color: var(--adin-black);
+    /* Hint the browser that these sections will be transformed (GSAP
+       applies translate3d during pin) so it keeps them on their own
+       compositor layer and doesn't re-rasterize text glyphs at every
+       sub-pixel scroll position. */
     will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
-  @media (min-width: 768px) {
-    main > section:not(#contact-section) {
-      position: sticky;
-      top: 0;
-      min-height: 100vh;
-    }
-  }
-
-  main > section:nth-of-type(1)  { z-index: 10;  }
-  main > section:nth-of-type(2)  { z-index: 20;  }
-  main > section:nth-of-type(3)  { z-index: 30;  }
-  main > section:nth-of-type(4)  { z-index: 40;  }
-  main > section:nth-of-type(5)  { z-index: 50;  }
-  main > section:nth-of-type(6)  { z-index: 60;  }
-  main > section:nth-of-type(7)  { z-index: 70;  }
-  main > section:nth-of-type(8)  { z-index: 80;  }
-  main > section:nth-of-type(9)  { z-index: 90;  }
-  main > section:nth-of-type(10) { z-index: 100; }
+  main > section:nth-of-type(1)  { z-index: 1; }
+  main > section:nth-of-type(2)  { z-index: 2; }
+  main > section:nth-of-type(3)  { z-index: 3; }
+  main > section:nth-of-type(4)  { z-index: 4; }
+  main > section:nth-of-type(5)  { z-index: 5; }
+  main > section:nth-of-type(6)  { z-index: 6; }
+  main > section:nth-of-type(7)  { z-index: 7; }
+  main > section:nth-of-type(8)  { z-index: 8; }
+  main > section:nth-of-type(9)  { z-index: 9; }
+  main > section:nth-of-type(10) { z-index: 10; }
 
   /* Form Input */
   .form-input {
