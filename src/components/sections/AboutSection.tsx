@@ -20,6 +20,7 @@ export function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
+      data-flow="normal"
       className="relative bg-adin-black overflow-hidden"
     >
       {/* Marquee sits at the top edge of About so it reads as the divider
