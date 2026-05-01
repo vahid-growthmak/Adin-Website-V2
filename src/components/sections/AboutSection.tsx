@@ -72,9 +72,9 @@ export function AboutSection() {
 
 function StatBox({ label, value, isAccent = false }: { label: string; value: string; isAccent?: boolean }) {
   return (
-    <div className="bg-adin-black px-8 py-12 hover:bg-white/[0.03] transition-colors group">
+    <div className="bg-adin-black px-5 py-10 sm:px-8 sm:py-12 hover:bg-white/[0.03] transition-colors group">
       <Reveal>
-        <p className={cn('font-heading font-black text-5xl md:text-6xl mb-3', isAccent ? 'text-adin-green' : 'text-white')}>
+        <p className={cn('font-heading font-black text-4xl sm:text-5xl md:text-6xl mb-3 leading-none', isAccent ? 'text-adin-green' : 'text-white')}>
           <StatCounter value={value} />
         </p>
         <p className="text-white/40 uppercase tracking-widest text-[10px] font-bold">

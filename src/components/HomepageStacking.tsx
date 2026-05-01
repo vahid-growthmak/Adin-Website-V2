@@ -37,12 +37,23 @@ export function HomepageStacking() {
 
     mm.add(
       {
-        isWide: '(min-width: 768px) and (min-height: 600px)',
+        canStack: '(min-height: 480px)',
         reduceMotion: '(prefers-reduced-motion: reduce)',
       },
       (context) => {
-        const { isWide, reduceMotion } = context.conditions!
-        if (!isWide || reduceMotion) return
+        const { canStack, reduceMotion } = context.conditions!
+        if (!canStack || reduceMotion) return
+
+        // Round scroll position to integer pixels and lock updates to
+        // the rAF paint cycle. Without this, ScrollTrigger's pin
+        // transform lands on fractional Y values during inertial /
+        // momentum scroll, which forces the browser to re-rasterize the
+        // pinned section's text glyphs every frame — visible as
+        // vibration on mobile and tablet (where SmoothScroll's
+        // smoothTouch is 0 and never normalizes touch scroll).
+        // Calling it here is idempotent on desktop where ScrollSmoother
+        // already enables it.
+        ScrollTrigger.normalizeScroll(true)
 
         const sections = gsap.utils.toArray<HTMLElement>('main > section')
 

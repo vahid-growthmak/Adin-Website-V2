@@ -90,7 +90,7 @@ export default function TeamPage() {
       {/* TEAM GRID */}
       <section className="bg-adin-black py-32 px-6 md:px-12 lg:px-16">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {team.map((member, i) => (
               <Reveal key={member.name} delay={i * 0.1}>
                 <div className="group">
@@ -99,8 +99,9 @@ export default function TeamPage() {
                       src={member.image}
                       alt={member.name}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      quality={95}
+                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-adin-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>

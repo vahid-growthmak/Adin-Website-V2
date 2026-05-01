@@ -66,12 +66,12 @@ export default function AboutPage() {
   return (
     <div className="bg-adin-black min-h-screen">
       {/* PAGE HERO */}
-      <section className="relative min-h-screen flex items-end">
+      <section className="relative min-h-[70vh] flex items-end">
         <div className="absolute inset-0">
-          <Image 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2400&auto=format&fit=crop" 
-            alt="About ADIN NYC" 
-            fill 
+          <Image
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2400&auto=format&fit=crop"
+            alt="About ADIN NYC"
+            fill
             className="object-cover"
             priority
           />
@@ -81,10 +81,10 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto">
             <Reveal>
               <SectionLabel className="mb-6">ABOUT ADIN NYC</SectionLabel>
-              <DisplayHeading className="text-white max-w-4xl mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px]">
+              <DisplayHeading className="text-white mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px]">
                 A Strategic Communications Partner
               </DisplayHeading>
-              <p className="text-white/60 max-w-xl text-xl md:text-2xl leading-relaxed">
+              <p className="text-white/50 max-w-xl text-xl md:text-2xl leading-relaxed">
                 We deliver purpose-driven communications for founders and brands shaping a better, more meaningful future.
               </p>
             </Reveal>

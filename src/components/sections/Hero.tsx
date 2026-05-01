@@ -65,7 +65,8 @@ export function Hero() {
             src="/images/hero-bg.jpg"
             alt={site.name}
             fill
-            sizes="100vw"
+            sizes="(max-width: 768px) 200vw, 100vw"
+            quality={95}
             className="object-cover"
             priority
           />
@@ -81,11 +82,11 @@ export function Hero() {
               <p className="hero-reveal font-body text-white/60 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
                 ADin transforms bold ideas into influence through strategic communications, helping founders build authority, expand reach, and drive lasting market impact.
               </p>
-              <div className="hero-reveal flex flex-wrap gap-4">
-                <Button href="/work" variant="primary">
+              <div className="hero-reveal flex flex-col sm:flex-row sm:flex-wrap gap-4">
+                <Button href="/work" variant="primary" className="w-full sm:w-auto justify-center sm:justify-start">
                   View Case Studies
                 </Button>
-                <Button href="/contact" variant="outline">
+                <Button href="/contact" variant="outline" className="w-full sm:w-auto justify-center sm:justify-start">
                   Contact Us
                 </Button>
               </div>
