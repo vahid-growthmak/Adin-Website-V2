@@ -325,56 +325,29 @@
     width: 100%;
   }
 
-  /* ===== HOMEPAGE SECTION STACKING SYSTEM =====
-     Mirrors the original Adin site: every section in <main> on the
-     homepage pins to the top of the viewport via `position: sticky`,
-     with a z-index ladder so later sections paint over earlier pinned
-     ones during the transition. Tall sections (about, philosophy,
-     services, work, clients, insights) additionally translate their
-     inner content with GSAP via `useStickyInternalScroll` so all of
-     their content is reachable inside the pinned frame.
-
-     The contact section opts out so the footer can appear at the end
-     of the page; mobile drops sticky entirely (the screens aren't tall
-     enough for stacking to feel right). */
+  /* Section stacking is driven by GSAP `ScrollTrigger.pin` (with
+     `pinSpacing: false`) in `src/components/HomepageStacking.tsx`. CSS
+     here just (1) gives every section a solid background so it cleanly
+     covers the section underneath when pinned, and (2) provides a
+     z-index ladder so later sections paint over earlier ones during
+     transitions. Sticky positioning is intentionally NOT used — GSAP
+     pin sets `position: fixed` directly and `position: sticky` would
+     conflict. */
   main > section {
     position: relative;
     background-color: var(--adin-black);
   }
 
-  @media (min-width: 768px) {
-    main > section:not(#contact-section) {
-      position: sticky;
-      top: 0;
-      min-height: 100vh;
-      will-change: transform;
-    }
-  }
-
-  /* Subtle depth shadow on the leading edge of every non-Hero section
-     as it rises into view. */
-  main > section:not(#home)::before {
-    content: '';
-    position: absolute;
-    top: -40px;
-    left: 0;
-    right: 0;
-    height: 40px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent);
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  main > section:nth-of-type(1)  { z-index: 10; }
-  main > section:nth-of-type(2)  { z-index: 20; }
-  main > section:nth-of-type(3)  { z-index: 30; }
-  main > section:nth-of-type(4)  { z-index: 40; }
-  main > section:nth-of-type(5)  { z-index: 50; }
-  main > section:nth-of-type(6)  { z-index: 60; }
-  main > section:nth-of-type(7)  { z-index: 70; }
-  main > section:nth-of-type(8)  { z-index: 80; }
-  main > section:nth-of-type(9)  { z-index: 90; }
-  main > section:nth-of-type(10) { z-index: 100; }
+  main > section:nth-of-type(1)  { z-index: 1; }
+  main > section:nth-of-type(2)  { z-index: 2; }
+  main > section:nth-of-type(3)  { z-index: 3; }
+  main > section:nth-of-type(4)  { z-index: 4; }
+  main > section:nth-of-type(5)  { z-index: 5; }
+  main > section:nth-of-type(6)  { z-index: 6; }
+  main > section:nth-of-type(7)  { z-index: 7; }
+  main > section:nth-of-type(8)  { z-index: 8; }
+  main > section:nth-of-type(9)  { z-index: 9; }
+  main > section:nth-of-type(10) { z-index: 10; }
 
   /* Form Input */
   .form-input {

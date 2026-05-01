@@ -115,7 +115,7 @@ export default function ContactPage() {
                 </div>
                 
                 <div>
-                    <select 
+                  <select 
                     name="interest"
                     className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:border-adin-green outline-none transition-colors appearance-none cursor-pointer"
                     onChange={handleChange}
