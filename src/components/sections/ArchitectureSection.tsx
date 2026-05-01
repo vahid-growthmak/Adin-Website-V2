@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export function ArchitectureSection() {
   return (
-    <section className="relative h-screen flex items-center overflow-hidden bg-adin-black">
+    <section id="advisory" className="relative h-screen flex items-center overflow-hidden bg-adin-black">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image

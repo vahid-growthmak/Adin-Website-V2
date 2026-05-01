@@ -85,7 +85,7 @@ export default function ServicesPage() {
                 Strategic Communications That Drive Brand Growth
               </DisplayHeading>
               <p className="text-white/50 max-w-xl text-xl md:text-2xl leading-relaxed">
-                Four disciplines. One strategic vision. Measurable results
+                Five disciplines. One strategic vision. Measurable results
               </p>
             </Reveal>
           </div>

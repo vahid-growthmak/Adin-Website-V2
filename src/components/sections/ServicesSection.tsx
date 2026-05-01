@@ -42,7 +42,7 @@ export function ServicesSection() {
         </div>
 
         <div className="flex flex-col">
-          {services.map((service, index) => (
+          {services.filter(s => s.id !== 'digital-enablement').map((service, index) => (
             <ServiceItem key={service.id} service={service} index={index} />
           ))}
         </div>
