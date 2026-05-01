@@ -9,45 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const team = [
-  {
-    name: 'Sue Asci',
-    role: 'Founder & CEO',
-    bio: 'With over 25 years in strategic communications, Sue founded ADIN NYC to bring purpose-driven PR to brands creating meaningful change. She is recognized as one of NYC\'s leading communications strategists.',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop'
-  },
-  {
-    name: 'Sarah Chen',
-    role: 'Director of Communications',
-    bio: 'Sarah leads our media relations practice, with expertise spanning lifestyle, health, and consumer verticals. She has placed stories in every major national publication.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1000&auto=format&fit=crop'
-  },
-  {
-    name: 'Marcus Williams',
-    role: 'Director of Experiences',
-    bio: 'Marcus brings 15 years of experiential marketing expertise, creating immersive brand moments that create lasting consumer connections and cultural impact.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop'
-  },
-  {
-    name: 'Priya Patel',
-    role: 'Senior Content Strategist',
-    bio: 'Priya crafts compelling brand narratives across digital channels, combining strategic thinking with creative storytelling to build brand authority and audience engagement.',
-    image: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=1000&auto=format&fit=crop'
-  },
-  {
-    name: 'James Torres',
-    role: 'Media Relations Manager',
-    bio: 'James manages our day-to-day media relationships, leveraging a vast network of journalist contacts across business, lifestyle, health, and food verticals.',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop'
-  },
-  {
-    name: 'Elena Ross',
-    role: 'Advisory Lead',
-    bio: 'Elena guides our advisory clients through brand positioning and communications architecture, drawing on extensive experience with startup founders and Fortune 500 executives.',
-    image: 'https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=1000&auto=format&fit=crop'
-  }
-]
+import { team } from '@/data/team'
 
 const faqs = [
   {
@@ -133,10 +95,11 @@ export default function TeamPage() {
               <Reveal key={member.name} delay={i * 0.1}>
                 <div className="group">
                   <div className="relative aspect-[3/4] overflow-hidden mb-8">
-                    <Image 
-                      src={member.image} 
-                      alt={member.name} 
-                      fill 
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-adin-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

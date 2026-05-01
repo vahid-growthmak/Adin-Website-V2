@@ -8,27 +8,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { animate } from 'framer-motion'
-
-const team = [
-  {
-    name: 'Sue Asci',
-    role: 'Founder & CEO',
-    image: '/images/team-sue.png',
-    bio: 'With over 25 years of experience in strategic communications, Sue founded ADin NYC to support purpose-driven brands making a meaningful impact.'
-  },
-  {
-    name: 'Sarah Chen',
-    role: 'Director of Communications',
-    image: '/images/team-2.png',
-    bio: 'Sarah leads media relations, building strong connections with top-tier journalists across lifestyle, health, and consumer sectors.'
-  },
-  {
-    name: 'Marcus Williams',
-    role: 'Director of Experiences',
-    image: '/images/team-3.png',
-    bio: 'Marcus Williams brings 15 years of experience, designing immersive brand experiences that engage audiences and create meaningful, lasting connections.'
-  }
-]
+import { leadership as team } from '@/data/team'
 
 const values = [
   {
@@ -205,15 +185,16 @@ export default function AboutPage() {
             <SectionLabel className="mb-6">The People</SectionLabel>
             <DisplayHeading className="text-white mb-20 text-4xl md:text-6xl">Our Leadership</DisplayHeading>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {team.map((member, i) => (
-              <Reveal key={i} delay={i * 0.1}>
+              <Reveal key={member.name} delay={i * 0.1}>
                 <div className="group">
-                  <div className="relative h-[480px] mb-8 overflow-hidden">
-                    <Image 
-                      src={member.image} 
-                      alt={member.name} 
-                      fill 
+                  <div className="relative aspect-[3/4] mb-8 overflow-hidden">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover transition-transform duration-1000 group-hover:scale-105"
                     />
                   </div>
