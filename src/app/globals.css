@@ -49,6 +49,28 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* ScrollSmoother layout. The wrapper is fixed to the viewport and
+     hidden-overflow; the content inside is what the smoother
+     translates with the smoothed scroll value. ScrollSmoother does
+     not init on viewports below 768px (see SmoothScroll.tsx); when
+     it doesn't init, these styles still produce a normal layout. */
+  #smooth-wrapper {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  @media (max-width: 767px) {
+    /* On mobile we skip ScrollSmoother init, so let the wrapper behave
+       like a passthrough and let the page scroll natively. */
+    #smooth-wrapper {
+      position: static;
+      overflow: visible;
+    }
+  }
+
   /* Custom cursor only replaces the system cursor on devices with a fine
      pointer — touch and keyboard-only users keep the native cursor. */
   @media (hover: hover) and (pointer: fine) {

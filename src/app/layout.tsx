@@ -5,6 +5,7 @@ import { GSAPProvider } from '@/components/providers/GSAPProvider'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { CustomCursor } from '@/components/ui/CustomCursor'
+import { SmoothScroll } from '@/components/SmoothScroll'
 import { site } from '@/data/site'
 
 const inter = Inter({
@@ -58,10 +59,14 @@ export default function RootLayout({
       </head>
       <body className="bg-adin-black text-adin-white">
         <GSAPProvider>
+          {/* Fixed-position UI lives outside the SmoothScroll wrapper so
+              it stays glued to the real viewport. */}
           <CustomCursor />
           <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <SmoothScroll>
+            <main>{children}</main>
+            <Footer />
+          </SmoothScroll>
         </GSAPProvider>
       </body>
     </html>
