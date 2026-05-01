@@ -8,7 +8,6 @@ import { ClientsSection } from '@/components/sections/ClientsSection'
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection'
 import { InsightsSection } from '@/components/sections/InsightsSection'
 import { ContactSection } from '@/components/sections/ContactSection'
-import { HomepageStacking } from '@/components/HomepageStacking'
 
 export default function Home() {
   return (
@@ -23,8 +22,6 @@ export default function Home() {
       <TestimonialsSection />
       <InsightsSection />
       <ContactSection />
-      {/* Stacking must mount AFTER all sections so refs/triggers see them. */}
-      <HomepageStacking />
     </>
   )
 }

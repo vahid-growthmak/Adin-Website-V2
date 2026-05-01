@@ -325,41 +325,40 @@
     width: 100%;
   }
 
-  /* Section stacking is driven by GSAP `ScrollTrigger.pin` (with
-     `pinSpacing: false`) in `src/components/HomepageStacking.tsx`. CSS
-     here just (1) gives every section a solid background so it cleanly
-     covers the section underneath when pinned, and (2) provides a
-     z-index ladder so later sections paint over earlier ones during
-     transitions. Sticky positioning is intentionally NOT used — GSAP
-     pin sets `position: fixed` directly and `position: sticky` would
-     conflict. */
+  /* ===== HOMEPAGE PIN-AT-SECTION-BOTTOM STACKING =====
+     Each section uses `position: sticky; bottom: 0` so the BROWSER —
+     not JavaScript — pins it when its bottom edge reaches the viewport
+     bottom. The browser handles the pin natively on the compositor,
+     with no per-frame inline transform on the section, so there's no
+     sub-pixel re-rasterization and no shaking. Tall sections (About,
+     Services, Work, Clients) get a natural-scroll period FIRST showing
+     all of their content, then the sticky engages with the bottom 100vh
+     held at the viewport bottom while the next section rises over.
+
+     `#contact-section` opts out so the footer can appear. Mobile drops
+     sticky entirely; the layout falls back to normal flow. */
   main > section {
     position: relative;
     background-color: var(--adin-black);
-    /* Force every section onto its own compositor layer at all times.
-       Without `transform: translateZ(0)`, the browser sometimes waits
-       for an actual transform to materialize before promoting — and on
-       the first frame GSAP pins, there's a hand-off window where the
-       section is being transformed but isn't yet on its own layer.
-       That single frame is enough for the browser to re-rasterize the
-       section's text at the new sub-pixel position, which reads as
-       vibration. Forcing the layer up-front eliminates the hand-off. */
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
   }
 
-  main > section:nth-of-type(1)  { z-index: 1; }
-  main > section:nth-of-type(2)  { z-index: 2; }
-  main > section:nth-of-type(3)  { z-index: 3; }
-  main > section:nth-of-type(4)  { z-index: 4; }
-  main > section:nth-of-type(5)  { z-index: 5; }
-  main > section:nth-of-type(6)  { z-index: 6; }
-  main > section:nth-of-type(7)  { z-index: 7; }
-  main > section:nth-of-type(8)  { z-index: 8; }
-  main > section:nth-of-type(9)  { z-index: 9; }
-  main > section:nth-of-type(10) { z-index: 10; }
+  @media (min-width: 768px) {
+    main > section:not(#contact-section) {
+      position: sticky;
+      bottom: 0;
+    }
+  }
+
+  main > section:nth-of-type(1)  { z-index: 10;  }
+  main > section:nth-of-type(2)  { z-index: 20;  }
+  main > section:nth-of-type(3)  { z-index: 30;  }
+  main > section:nth-of-type(4)  { z-index: 40;  }
+  main > section:nth-of-type(5)  { z-index: 50;  }
+  main > section:nth-of-type(6)  { z-index: 60;  }
+  main > section:nth-of-type(7)  { z-index: 70;  }
+  main > section:nth-of-type(8)  { z-index: 80;  }
+  main > section:nth-of-type(9)  { z-index: 90;  }
+  main > section:nth-of-type(10) { z-index: 100; }
 
   /* Form Input */
   .form-input {
