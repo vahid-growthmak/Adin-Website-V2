@@ -7,6 +7,7 @@ import { Footer } from '@/components/layout/Footer'
 import { CustomCursor } from '@/components/ui/CustomCursor'
 import { SmoothScroll } from '@/components/SmoothScroll'
 import { site } from '@/data/site'
+import { LayoutContent } from '@/components/layout/LayoutContent'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -63,10 +64,9 @@ export default function RootLayout({
               it stays glued to the real viewport. */}
           <CustomCursor />
           <Navbar />
-          <SmoothScroll>
-            <main>{children}</main>
-            <Footer />
-          </SmoothScroll>
+          <LayoutContent>
+            {children}
+          </LayoutContent>
         </GSAPProvider>
       </body>
     </html>
