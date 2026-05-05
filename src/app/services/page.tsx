@@ -14,7 +14,7 @@ const services = [
     label: 'Communications',
     title: 'Strategic Media Relations & Brand Communications',
     description: 'We deliver strategic media relations, brand messaging, and PR campaigns that position your brand with credibility and influence across key media channels.',
-    image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/services/communications.png',
     capabilities: ['Media Relations', 'Reputation Management', 'Crisis Communications', 'Thought Leadership', 'Press Materials', 'Media Training'],
     link: '/services/communications'
   },
@@ -24,7 +24,7 @@ const services = [
     label: 'Experiences',
     title: 'Immersive Brand Experiences & Activations',
     description: 'We design and execute brand activations and experiential campaigns that connect with audiences, create engagement, and build lasting brand recall.',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/services/experiences.png',
     capabilities: ['Brand Activations', 'Product Launches', 'Community Events', 'Influencer Experiences', 'Pop-Ups'],
     link: '/services/experiences',
     reverse: true
@@ -35,7 +35,7 @@ const services = [
     label: 'Content Creation',
     title: 'Multimedia Content & Brand Storytelling',
     description: 'We create high-impact content across digital platforms, combining storytelling, visual production, and social strategy to amplify your brand voice.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/services/content-creation.png',
     capabilities: ['Copywriting', 'Visual Production', 'Social Content', 'Video Production', 'Editorial Content'],
     link: '/services/content-narrative'
   },
@@ -45,7 +45,7 @@ const services = [
     label: 'Strategic Advisory',
     title: 'Brand Strategy & Executive Advisory',
     description: 'We provide senior-level strategic advisory for founders and leadership teams, helping define brand positioning, messaging frameworks, and long-term growth strategies.',
-    image: 'https://images.unsplash.com/photo-1560264280-88b68371db39?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/services/advisory.png',
     capabilities: ['Brand Positioning', 'Messaging Frameworks', 'Investor Communications', 'Market Entry Strategy', 'Growth Advisory'],
     link: '/services/advisory',
     reverse: true
@@ -54,10 +54,10 @@ const services = [
     id: 'digital-enablement',
     number: '05',
     label: 'Digital Enablement',
-    title: 'White-Label Digital Infrastructure',
-    description: 'We deliver turnkey digital services — websites, content systems, analytics, and growth infrastructure — engineered for partners and agencies to ship under their own brand.',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop',
-    capabilities: ['White-Label Web Development', 'Content Management Systems', 'SEO & Performance', 'Analytics & Reporting', 'Marketing Automation', 'Partner Enablement'],
+    title: 'Digital Enablement & Infrastructure',
+    description: 'We deliver comprehensive digital services — from performance-led websites and content systems to integrated analytics and growth infrastructure — engineered to scale brand impact.',
+    image: '/images/services/digital-enablement.png',
+    capabilities: ['Modern Web Development', 'Content Management Systems', 'SEO & Performance', 'Analytics & Reporting', 'Marketing Automation', 'Growth Infrastructure'],
     link: '/services/digital-enablement'
   }
 ]
@@ -69,7 +69,7 @@ export default function ServicesPage() {
       <section className="relative min-h-[70vh] flex items-end">
         <div className="absolute inset-0">
           <Image 
-            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2400&auto=format&fit=crop" 
+            src="/images/services-hero.png" 
             alt="Services Hero" 
             fill 
             className="object-cover"
@@ -151,28 +151,28 @@ export default function ServicesPage() {
                 client: 'Designs for Health',
                 service: 'Communications',
                 desc: 'Secured 150+ top-tier media placements in wellness and trade verticals.',
-                image: 'https://images.unsplash.com/photo-1579152276503-34079860b29a?q=80&w=800&auto=format&fit=crop',
+                image: '/images/impact/designs-for-health.png',
                 link: '/work/designs-for-health'
               },
               {
                 client: 'Hooray Foods',
                 service: 'Experiences',
                 desc: 'Produced a high-impact NYC pop-up launch with 50+ media and influencer attendees.',
-                image: 'https://images.unsplash.com/photo-1606787366850-de6330128bfc?q=80&w=800&auto=format&fit=crop',
+                image: '/images/impact/hooray-foods.png',
                 link: '/work/hooray-foods'
               },
               {
                 client: 'EarthKind',
                 service: 'Content Creation',
                 desc: 'Developed an integrated content strategy that grew social engagement by 45%.',
-                image: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?q=80&w=800&auto=format&fit=crop',
+                image: '/images/impact/earthkind.png',
                 link: '/work/earthkind'
               },
               {
                 client: 'Naturepedic',
                 service: 'Strategic Advisory',
                 desc: 'Led strategic brand repositioning to capture 20% more market share in organic bedding.',
-                image: 'https://images.unsplash.com/photo-1505691722718-4684375e7970?q=80&w=800&auto=format&fit=crop',
+                image: '/images/impact/naturepedic.png',
                 link: '/work/naturepedic'
               }
             ].map((study, i) => (

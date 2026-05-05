@@ -287,32 +287,32 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   'digital-enablement': {
     slug: 'digital-enablement',
     label: 'Digital Enablement',
-    title: 'Digital Enablement, White-Labeled.',
-    description: 'Turnkey websites, content systems, and growth infrastructure — built by ADin, delivered under your brand.',
+    title: 'Digital Enablement & Infrastructure.',
+    description: 'High-performance websites, content systems, and growth infrastructure engineered to scale brand impact and operational efficiency.',
     heroImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2400&auto=format&fit=crop',
     approach: {
-      title: 'Your Brand on the Front. Our Engineering Behind It.',
-      description: "We partner with agencies, holding companies, and in-house teams who need senior digital execution without standing up the practice themselves. Every deliverable ships under your name — the strategy, the build, the ongoing optimization. We stay invisible so your client relationship stays uncomplicated.",
+      title: 'Engineering the Foundation for Brand Growth.',
+      description: "We build the digital systems that power modern brands. From high-conversion marketing surfaces to robust backend architectures, our engineering team ensures your digital presence is as sophisticated as your strategy. We bridge the gap between creative vision and technical execution, providing a seamless foundation for growth.",
       image: 'https://images.unsplash.com/photo-1517436026-0c2e6e0c5f0e?q=80&w=2000&auto=format&fit=crop',
       features: [
         {
-          title: 'White-Label Delivery',
-          description: 'Every artifact — code, content, decks, dashboards — ships under your branding, with documentation and handoff materials your team can present as their own.'
+          title: 'Integrated Digital Strategy',
+          description: 'We don’t just build tools; we build systems. Every digital artifact — from code to content architecture — is designed to align with your broader communications and brand goals.'
         },
         {
-          title: 'Senior Engineering Bench',
-          description: 'On-demand access to product, design, and engineering capacity that scales with your pipeline, without the cost of a full in-house team.'
+          title: 'Senior Engineering Capacity',
+          description: 'Direct access to senior product, design, and engineering expertise. We function as your high-performance digital department, scaling with your ambitions.'
         },
         {
-          title: 'Operational Discretion',
-          description: "We never client-face unless you invite us in. Status, communication, and credit all flow through your account leads."
+          title: 'Operational Excellence',
+          description: "We prioritize performance, security, and scalability. Our systems are built to handle complexity while remaining intuitive for your team to manage and evolve."
         }
       ]
     },
     services: [
       {
-        title: 'White-Label Web Development',
-        description: 'Marketing sites, landing pages, and product surfaces built on Next.js, Webflow, and headless CMS platforms — with handoff packages your developers can own end-to-end.'
+        title: 'Modern Web Development',
+        description: 'Marketing sites, landing pages, and digital product surfaces built on Next.js, Webflow, and headless CMS platforms — optimized for speed, SEO, and conversion.'
       },
       {
         title: 'Content Management Systems',
@@ -324,29 +324,29 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         title: 'Analytics & Reporting',
-        description: 'GA4, server-side tracking, and dashboards configured for your stack so your account team can present clean numbers without wrangling pipes.'
+        description: 'GA4, server-side tracking, and dashboards configured for your stack so you can monitor growth with precision.'
       },
       {
         title: 'Marketing Automation',
         description: 'Lifecycle email, lead-routing, and CRM integrations across HubSpot, Klaviyo, Customer.io, and the rest of the modern stack.'
       },
       {
-        title: 'Partner Enablement',
-        description: 'Reusable component libraries, brand-themable templates, and SOPs your agency can deploy across multiple clients without duplicate engineering spend.'
+        title: 'Growth Infrastructure',
+        description: 'Scalable component libraries, brand-consistent templates, and technical SOPs that allow your brand to deploy digital assets rapidly and consistently.'
       }
     ],
     metrics: [
-      { value: '40+', label: 'Partner Engagements' },
-      { value: '120+', label: 'Sites Shipped' },
-      { value: '99.9%', label: 'Confidentiality' },
-      { value: 'NDA', label: 'Default Posture' }
+      { value: '120+', label: 'Digital Projects Shipped' },
+      { value: '40+', label: 'Strategic Partnerships' },
+      { value: '100%', label: 'Performance Focused' },
+      { value: '24/7', label: 'Systems Monitoring' }
     ],
     testimonials: [
       {
-        quote: "ADin operates like a senior in-house team that no one else knows exists. We pitch the work, they ship the work, our clients never see the seams.",
-        author: 'Managing Partner',
-        role: 'Agency Partner',
-        initials: 'MP'
+        quote: "ADin provides the technical depth and strategic foresight we need to stay competitive. Their ability to translate complex brand needs into high-performance digital systems is unmatched.",
+        author: 'Digital Director',
+        role: 'Enterprise Client',
+        initials: 'DD'
       }
     ]
   }
